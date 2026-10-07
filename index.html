@@ -1,428 +1,384 @@
-<title>Aura Privacy &amp; Terms</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-<style>
-/* Layout: one reading column under a sticky bar with the three documents as tabs and a RO/EN switch. */
-:root{
-  --bg:#fdf7f8; --surface:#ffffff; --fg:#2a1219; --muted:#76545e; --line:#efd9de;
-  --accent:#c8204f; --accent-soft:#fbe3ea; --accent-ink:#ffffff;
-  --display:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --body:"Atkinson Hyperlegible", ui-sans-serif, system-ui, -apple-system, sans-serif;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1a0b11; --surface:#24111a; --fg:#f7e8ec; --muted:#c09aa6; --line:#43222e;
-  --accent:#ff5c86; --accent-soft:#3a1624; --accent-ink:#22070f; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1a0b11; --surface:#24111a; --fg:#f7e8ec; --muted:#c09aa6; --line:#43222e;
-  --accent:#ff5c86; --accent-soft:#3a1624; --accent-ink:#22070f; color-scheme:dark}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font:400 1.0625rem/1.65 var(--body);margin:0}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar-in,.wrap{max-width:46rem;margin:0 auto;padding-inline:20px}
-.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-block:12px}
-.brand{font:800 1.5rem/1 var(--display);letter-spacing:-.02em;color:var(--accent);margin-right:auto;display:flex;align-items:center;gap:8px}
-.brand i{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--accent-soft);display:inline-block}
-nav{display:flex;gap:4px;flex-wrap:wrap}
-nav button,.lang button{font:700 .9rem/1 var(--body);border:0;background:none;color:var(--muted);padding:9px 12px;border-radius:999px;cursor:pointer}
-nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
-nav button:hover:not([aria-selected="true"]){color:var(--fg);background:var(--accent-soft)}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:2px}
-.lang button{padding:6px 10px;font-size:.8rem;letter-spacing:.06em}
-.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
-button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.wrap{padding-block:32px 72px}
-h1{font:800 clamp(1.9rem,5vw,2.6rem)/1.1 var(--display);letter-spacing:-.025em;margin:0 0 8px;text-wrap:balance}
-h2{font:600 1.3rem/1.25 var(--display);margin:2.2em 0 .5em;text-wrap:balance}
-h3{font:700 1.02rem/1.3 var(--body);margin:1.4em 0 .3em}
-p,ul,ol{margin:0 0 .9em;max-width:65ch}
-ul,ol{padding-left:1.2em}
-li{margin:.25em 0}
-a{color:var(--accent)}
-.meta{color:var(--muted);font-size:.92rem;margin-bottom:1.6em}
-.lead{font-size:1.15rem}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:1.2em 0}
-.box p:last-child,.box ul:last-child{margin-bottom:0}
-.tbl{overflow-x:auto;margin:1em 0}
-table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.95rem}
-th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
-th{font:700 .78rem/1.2 var(--body);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
-.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.mail code{font:700 1.05rem/1.4 var(--body);background:var(--accent-soft);padding:6px 12px;border-radius:10px;user-select:all;word-break:break-all}
-.copy{font:700 .85rem/1 var(--body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:8px 14px;cursor:pointer}
-details{border-bottom:1px solid var(--line);padding:12px 0}
-summary{font-weight:700;cursor:pointer}
-details p{margin:.6em 0 0}
-footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:3em;padding-top:1.2em}
-@media (prefers-reduced-motion:no-preference){.doc{animation:in .25s ease-out}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
-</style>
+<!doctype html>
+<html lang="ro" data-mode="dating">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aura · Vezi muzica din cameră</title>
+<meta name="description" content="Aura îți arată oamenii din aceeași cameră după muzica pe care o ascultă. Salută, vorbiți, deveniți prieteni. Dating și Vibe. Fără reclame, fără urmărire.">
+<meta name="theme-color" content="#1a0b13">
+<link rel="canonical" href="https://anghelcc.github.io/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aura">
+<meta property="og:title" content="Aura · See the music in the room">
+<meta property="og:description" content="See who's in the same room as you by the music they listen to. Wave, chat, become friends.">
+<meta property="og:url" content="https://anghelcc.github.io/">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:locale:alternate" content="en_GB">
+<script>
+  // Old links to the legal pages (/#privacy, /#terms-ro…) still work: they now live on legal.html.
+  if (/^#(privacy|terms|support)/i.test(location.hash)) location.replace('legal.html' + location.hash);
+  document.documentElement.classList.add('js');
+  // Language: what you chose before (here or on the legal page), otherwise your browser's.
+  var lang = (navigator.language || '').toLowerCase().indexOf('ro') === 0 ? 'ro' : 'en';
+  try {
+    var saved = localStorage.getItem('aura-lang') || localStorage.getItem('aura-legal-lang');
+    if (saved === 'ro' || saved === 'en') lang = saved;
+    var m = localStorage.getItem('aura-site-mode');
+    if (m === 'vibing' || m === 'dating') document.documentElement.dataset.mode = m;
+  } catch (e) {}
+  document.documentElement.lang = lang;
+</script>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main"><span data-en>Skip to content</span><span data-ro>Sari la conținut</span></a>
 
-<div class="bar"><div class="bar-in">
-  <div class="brand"><i aria-hidden="true"></i>aura</div>
-  <nav role="tablist" aria-label="Documents">
-    <button id="t-privacy" role="tab" data-doc="privacy" aria-selected="true"><span data-en>Privacy</span><span data-ro>Confidențialitate</span></button>
-    <button id="t-terms" role="tab" data-doc="terms" aria-selected="false"><span data-en>Terms</span><span data-ro>Termeni</span></button>
-    <button id="t-support" role="tab" data-doc="support" aria-selected="false"><span data-en>Support</span><span data-ro>Ajutor</span></button>
-  </nav>
-  <div class="lang" role="group" aria-label="Language">
-    <button id="l-ro" data-lang="ro" aria-pressed="false">RO</button>
-    <button id="l-en" data-lang="en" aria-pressed="true">EN</button>
+<!-- Icons (outline style, from the Lucide set, ISC licence) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-6-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-bluetooth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="i-eyeoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="M2 2l20 20"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top" aria-label="Aura"><i class="dot" aria-hidden="true"></i><span>aura</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#how"><span data-en>How it works</span><span data-ro>Cum funcționează</span></a>
+      <a href="#features"><span data-en>Features</span><span data-ro>Funcții</span></a>
+      <a href="#modes"><span data-en>Modes</span><span data-ro>Moduri</span></a>
+      <a href="#privacy"><span data-en>Privacy</span><span data-ro>Confidențialitate</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="seg mode-seg" role="group" aria-label="Dating or Vibe colours" data-seg="mode">
+      <span class="knob" aria-hidden="true"></span>
+      <button type="button" data-value="dating" aria-pressed="true">Dating</button>
+      <button type="button" data-value="vibing" aria-pressed="false">Vibe</button>
+    </div>
+    <div class="seg lang" role="group" aria-label="Language" data-seg="lang">
+      <span class="knob" aria-hidden="true"></span>
+      <button type="button" data-value="ro" aria-pressed="true">RO</button>
+      <button type="button" data-value="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn primary small cta-top" href="#join"><span data-en>Get early access</span><span data-ro>Acces timpuriu</span></a>
   </div>
-</div></div>
+</header>
 
-<main class="wrap">
+<main id="main">
 
-<!-- ================= PRIVACY · EN ================= -->
-<article class="doc" data-doc="privacy" lang="en">
-<h1>Privacy Policy</h1>
-<p class="meta">Effective 7 October 2026</p>
-<p class="lead">Aura shows you who is nearby and what they are listening to. To do that it has to know roughly where you are and who is in the same room. This page explains exactly what Aura collects, why, who can see it and how long it is kept.</p>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div>
+      <p class="eyebrow reveal"><i class="live" aria-hidden="true"></i><span data-en>Now in testing · iPhone</span><span data-ro>Acum în teste · iPhone</span></p>
+      <h1 class="reveal" style="--d:.05s">
+        <span data-en>See the <em>music</em> in the room.</span>
+        <span data-ro>Vezi <em>muzica</em> din cameră.</span>
+      </h1>
+      <p class="lead reveal" style="--d:.1s">
+        <span data-en>Open Aura in a lecture hall, a café, a food court or on the bus, and see who's around you by the music they love. Wave, chat, become friends.</span>
+        <span data-ro>Deschide Aura la cursuri, într-o cafenea, la food court sau în autobuz și vezi cine e în jurul tău după muzica pe care o iubește. Salută, vorbiți, deveniți prieteni.</span>
+      </p>
+      <div class="hero-cta reveal" style="--d:.15s">
+        <a class="btn primary" href="#join"><svg aria-hidden="true"><use href="#i-sparkles"/></svg><span data-en>Get early access</span><span data-ro>Vreau acces timpuriu</span></a>
+        <a class="btn ghost" href="#how"><span data-en>How it works</span><span data-ro>Cum funcționează</span></a>
+      </div>
+      <div class="facts reveal" style="--d:.2s">
+        <span class="pill"><svg aria-hidden="true"><use href="#i-bluetooth"/></svg><span data-en>Same room only</span><span data-ro>Doar aceeași cameră</span></span>
+        <span class="pill"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-en>Chats last 24 h</span><span data-ro>Conversații de 24 h</span></span>
+        <span class="pill"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-en>No ads, no tracking</span><span data-ro>Fără reclame, fără urmărire</span></span>
+      </div>
+    </div>
 
-<div class="box">
-<p><strong>The short version</strong></p>
-<ul>
-<li>Other people only see you while you have Aura open on your screen, never while ghost mode is on, and not after you tap <em>Leave the room</em>.</li>
-<li>Your exact position is never shown to anyone. Distance and direction appear only after you have both waved.</li>
-<li>Your room position is deleted within about 20 minutes of leaving. Chats with people who are not your friends are deleted after 24 hours.</li>
-<li>No ads, no tracking across other apps, and we never sell your data.</li>
-<li>You can delete your account and everything in it from the app at any time.</li>
-</ul>
-</div>
+    <div class="phone-wrap reveal" style="--d:.1s" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="wave-toast"><svg width="14" height="14"><use href="#i-hand"/></svg><span data-en>Ana waved at you.</span><span data-ro>Ana te-a salutat.</span></div>
+          <div class="app-top">
+            <div class="app-logo"><i class="dot"></i>aura</div>
+            <div class="app-seg"><span class="d">Dating</span><span class="v">Vibe</span></div>
+          </div>
+          <div class="app-pill"><i></i><span data-en>Visible now</span><span data-ro>Vizibil acum</span></div>
+          <div class="radar">
+            <div class="core"></div>
+            <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+            <div class="ping"></div><div class="ping p2"></div>
+            <div class="sweep"></div>
+            <div class="person" style="left:50%;top:20%;--c:var(--indie);--f:#3b8f6b;--t:1.7s;--ft:3.2s;animation-delay:.2s"><div class="glow"></div><div class="face">I</div></div>
+            <div class="person sharp" style="left:76%;top:33%;--c:var(--electronic);--f:#7b3fa0;--t:.9s;--ft:2.7s;animation-delay:.35s"><div class="glow"></div><div class="face">E</div></div>
+            <div class="person" style="left:27%;top:36%;--c:var(--lofi);--f:#2f6aa8;--t:1.7s;--ft:3.6s;animation-delay:.5s"><div class="glow"></div><div class="face">M</div></div>
+            <div class="person" style="left:20%;top:64%;--c:var(--pop);--f:#b0476f;--t:1.7s;--ft:2.9s;animation-delay:.65s"><div class="glow"></div><div class="face">A</div></div>
+            <div class="person sharp" style="left:70%;top:70%;--c:var(--hiphop);--f:#a8622a;--t:.9s;--ft:3.3s;animation-delay:.8s"><div class="glow"></div><div class="face">T</div></div>
+            <div class="person" style="left:44%;top:84%;--c:var(--jazz);--f:#8a7330;--t:1.7s;--ft:3s;animation-delay:.95s"><div class="glow"></div><div class="face">L</div></div>
+            <div class="person sharp" style="left:86%;top:55%;--c:var(--rock);--f:#a83a44;--t:.9s;--ft:3.4s;animation-delay:1.1s"><div class="glow"></div><div class="face">D</div></div>
+            <div class="me">A</div>
+          </div>
+          <div class="app-title"><span data-en>7 people in the room</span><span data-ro>7 persoane în cameră</span></div>
+          <div class="app-sub"><span data-en>Direction shows once you've both waved.</span><span data-ro>Direcția apare după ce vă salutați amândoi.</span></div>
+          <div class="app-row" style="--c:var(--indie);--f:#3b8f6b;animation-delay:1.3s"><div class="av">I</div><div><b>Irina, 24</b><small>Visele · Irina Rimes</small></div><span class="score">82%</span></div>
+          <div class="app-row" style="--c:var(--lofi);--f:#2f6aa8;animation-delay:1.45s"><div class="av">M</div><div><b>Maria, 21</b><small>Aruarian Dance · Nujabes</small></div><span class="score">74%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Who is responsible</h2>
-<p>Aura is run by Anghel Ciobanu, an individual developer based in Romania, who is the data controller for the information described here. Contact for anything about your data:</p>
-<div class="mail"><code class="addr">anghel.c.c@protonmail.com</code><button class="copy" type="button" data-en>Copy</button><button class="copy" type="button" data-ro>Copiază</button></div>
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker reveal"><span data-en>How it works</span><span data-ro>Cum funcționează</span></p>
+      <h2 class="title reveal"><span data-en>Three steps from strangers to a shared song.</span><span data-ro>Trei pași de la necunoscuți la o piesă în comun.</span></h2>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-radar"/></svg></div>
+        <h3><span data-en>Open Aura</span><span data-ro>Deschide Aura</span></h3>
+        <p><span data-en>You're in the room as soon as it's open. Your phone finds the phones around you over Bluetooth, and only those.</span><span data-ro>Ești în cameră imediat ce o deschizi. Telefonul tău găsește prin Bluetooth telefoanele din jur, și doar pe acelea.</span></p>
+      </article>
+      <article class="step reveal" style="--d:.1s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-sparkles"/></svg></div>
+        <h3><span data-en>See their aura</span><span data-ro>Vezi aura fiecăruia</span></h3>
+        <p><span data-en>Everyone glows in the colour of their music, pulsing to its rhythm. Listening to the same artist? You're in harmony.</span><span data-ro>Fiecare strălucește în culoarea muzicii lui, pe ritmul ei. Ascultați același artist? Sunteți în armonie.</span></p>
+      </article>
+      <article class="step reveal" style="--d:.2s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-hand"/></svg></div>
+        <h3><span data-en>Wave, then talk</span><span data-ro>Salută, apoi vorbiți</span></h3>
+        <p><span data-en>When you've both waved, chat opens and you can send each other songs. Chats disappear after 24 hours, unless you become friends.</span><span data-ro>Când vă salutați amândoi, se deschide chatul și vă puteți trimite piese. Conversațiile dispar după 24 de ore, dacă nu deveniți prieteni.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
 
-<h2>What Aura collects</h2>
-<div class="tbl"><table>
-<thead><tr><th>Information</th><th>What it is used for</th><th>Who can see it</th></tr></thead>
-<tbody>
-<tr><td><strong>Sign-in</strong>: your Apple ID, your Google account (name and email) or your email address</td><td>Creating and securing your account</td><td>Only you. With Sign in with Apple you can hide your real email.</td></tr>
-<tr><td><strong>Profile</strong>: first name, date of birth, gender, photo, a short bio</td><td>Showing who you are; confirming you are 18 or older</td><td>People in the same room see your name, age (not your birth date), photo and bio</td></tr>
-<tr><td><strong>Music</strong>: favourite artists, music styles, the song you are playing, songs you send</td><td>Your aura colour, the match score and "now playing"</td><td>People in the same room and people you are connected with</td></tr>
-<tr><td><strong>Dating preferences</strong>: who you want to see and an age range</td><td>Only in Dating mode, to decide who appears on your radar</td><td>No one. They are never shown on your profile.</td></tr>
-<tr><td><strong>Location</strong>: approximate GPS position and its accuracy, while Aura is open</td><td>Showing the direction to someone after you have both waved, and spotting fake locations. Who is in your room is decided by Bluetooth only.</td><td>No one. It is only used to compare distances.</td></tr>
-<tr><td><strong>Bluetooth</strong>: a random code that changes regularly, and how strongly nearby phones hear it</td><td>Telling "very close", "same room" and "nearby" apart</td><td>No one. The code is not linked to your name for anyone outside Aura's server.</td></tr>
-<tr><td><strong>Interactions</strong>: waves, chat messages, friend requests</td><td>Letting you connect with people</td><td>You and the other person</td></tr>
-<tr><td><strong>Contact details you choose to share</strong>: phone number (for calls, texts or WhatsApp) and Instagram username</td><td>Letting a friend reach you outside Aura</td><td>Only the friend you shared them with</td></tr>
-<tr><td><strong>Safety</strong>: people you block, reports you send or receive</td><td>Keeping Aura safe and enforcing the Terms</td><td>Only the operator of Aura, when reviewing a report</td></tr>
-<tr><td><strong>Optional connections</strong>: Apple Music access, a Last.fm username</td><td>Reading your top artists and the song you are playing</td><td>Only the results (artists, current song) are shared, as described above</td></tr>
-</tbody></table></div>
-<p>Aura does not collect contacts, photos other than the one you choose, advertising identifiers, or your location while the app is closed. Aura does not use analytics or advertising tools.</p>
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker reveal"><span data-en>Features</span><span data-ro>Funcții</span></p>
+      <h2 class="title reveal"><span data-en>Made for real rooms, not endless feeds.</span><span data-ro>Făcută pentru camere reale, nu pentru feed-uri fără sfârșit.</span></h2>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-bluetooth"/></svg></div>
+        <h3><span data-en>The room, for real</span><span data-ro>Camera, pe bune</span></h3>
+        <p><span data-en>Only people whose phones can actually hear yours appear. Nobody can peek in from across town.</span><span data-ro>Apar doar oamenii ale căror telefoane chiar îl aud pe al tău. Nimeni nu se poate uita de la celălalt capăt al orașului.</span></p>
+      </article>
+      <article class="card reveal" style="--d:.06s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-music"/></svg></div>
+        <h3><span data-en>Songs that open</span><span data-ro>Piese care se deschid</span></h3>
+        <p><span data-en>Send a song in the chat. It opens straight in Spotify, Apple Music or YouTube Music.</span><span data-ro>Trimite o piesă în chat. Se deschide direct în Spotify, Apple Music sau YouTube Music.</span></p>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
+        <h3><span data-en>24-hour chats</span><span data-ro>Conversații de 24 de ore</span></h3>
+        <p><span data-en>No pressure, no pile of old chats. Become friends and the conversation stays.</span><span data-ro>Fără presiune, fără conversații vechi adunate. Deveniți prieteni și conversația rămâne.</span></p>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-link"/></svg></div>
+        <h3><span data-en>Share on your terms</span><span data-ro>Dai contactul când vrei tu</span></h3>
+        <p><span data-en>Give a friend your WhatsApp, number or Instagram, one friend at a time. Stop sharing whenever you like.</span><span data-ro>Dă-i unui prieten WhatsApp-ul, numărul sau Instagramul, câte unui prieten pe rând. Oprești oricând.</span></p>
+      </article>
+      <article class="card reveal" style="--d:.06s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-eyeoff"/></svg></div>
+        <h3><span data-en>Ghost mode</span><span data-ro>Modul Fantomă</span></h3>
+        <p><span data-en>Look around without being seen. If you wave at someone, only that person sees you.</span><span data-ro>Te uiți în jur fără să fii văzut. Dacă saluți pe cineva, doar acea persoană te vede.</span></p>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+        <h3><span data-en>Safe by design</span><span data-ro>Sigură din construcție</span></h3>
+        <p><span data-en>18+ only. Block and report from any profile. Delete your account and everything in it, right in the app.</span><span data-ro>Doar 18+. Blochezi și raportezi din orice profil. Îți ștergi contul și tot ce e în el, direct din aplicație.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
 
-<h2>Dating mode</h2>
-<p>Choosing your gender and who you want to see in Dating mode can reveal information about your sexual orientation. Aura uses these settings only to filter your radar and never shows them to anyone. By choosing them you give your explicit consent to this use. You can withdraw it at any time by switching to Vibe mode or changing your preferences in your profile.</p>
+<!-- ================= MUSIC AURAS ================= -->
+<section id="auras">
+  <div class="wrap auras">
+    <div>
+      <p class="kicker reveal"><span data-en>Music auras</span><span data-ro>Aura muzicii</span></p>
+      <h2 class="title reveal"><span data-en>Your music is your colour.</span><span data-ro>Muzica ta e culoarea ta.</span></h2>
+      <p class="intro reveal"><span data-en>Every style has its own glow. Calm styles breathe slowly; loud ones pulse with a hard hit. You can tell the room's mood at a glance.</span><span data-ro>Fiecare stil are lumina lui. Stilurile calme respiră încet, cele puternice pulsează pe bătaie. Simți atmosfera camerei dintr-o privire.</span></p>
+      <div class="harmony reveal"><svg aria-hidden="true"><use href="#i-heart"/></svg><p><span data-en><b>In harmony.</b> When someone nearby is listening to the same artist as you, Aura shows it.</span><span data-ro><b>În armonie.</b> Când cineva din jur ascultă același artist ca tine, Aura îți arată.</span></p></div>
+    </div>
+    <div class="chips">
+      <div class="chip reveal" style="--c:var(--lofi);--t:1.7s"><span class="orb"></span><div><b>Lo-fi</b><small><span data-en>soft and slow</span><span data-ro>lin și încet</span></small></div></div>
+      <div class="chip sharp reveal" style="--c:var(--electronic);--t:.9s;--d:.05s"><span class="orb"></span><div><b><span data-en>Electronic</span><span data-ro>Electronică</span></b><small><span data-en>hard beat</span><span data-ro>bătaie puternică</span></small></div></div>
+      <div class="chip sharp reveal" style="--c:var(--rock);--t:.9s"><span class="orb"></span><div><b>Rock</b><small><span data-en>hard beat</span><span data-ro>bătaie puternică</span></small></div></div>
+      <div class="chip reveal" style="--c:var(--pop);--t:1.7s;--d:.05s"><span class="orb"></span><div><b>Pop</b><small><span data-en>soft and slow</span><span data-ro>lin și încet</span></small></div></div>
+      <div class="chip sharp reveal" style="--c:var(--hiphop);--t:.9s"><span class="orb"></span><div><b>Hip-hop</b><small><span data-en>hard beat</span><span data-ro>bătaie puternică</span></small></div></div>
+      <div class="chip reveal" style="--c:var(--indie);--t:1.7s;--d:.05s"><span class="orb"></span><div><b>Indie</b><small><span data-en>soft and slow</span><span data-ro>lin și încet</span></small></div></div>
+      <div class="chip reveal" style="--c:var(--jazz);--t:1.7s"><span class="orb"></span><div><b>Jazz</b><small><span data-en>soft and slow</span><span data-ro>lin și încet</span></small></div></div>
+      <div class="chip reveal" style="--c:var(--classical);--t:1.7s;--d:.05s"><span class="orb"></span><div><b><span data-en>Classical</span><span data-ro>Clasică</span></b><small><span data-en>soft and slow</span><span data-ro>lin și încet</span></small></div></div>
+    </div>
+  </div>
+</section>
 
-<h2>Why we are allowed to use it</h2>
-<ul>
-<li><strong>To provide the service you asked for</strong> (GDPR art. 6(1)(b)): your account, profile, music, being in the room, waves and chats.</li>
-<li><strong>Your consent</strong> (art. 6(1)(a) and art. 9(2)(a)): location and Bluetooth permissions, Apple Music access, Last.fm, and the Dating mode settings. You can withdraw consent in your phone's settings or in Aura.</li>
-<li><strong>Legitimate interest in safety</strong> (art. 6(1)(f)): blocks, reports, the 18+ check, and keeping evidence when someone breaks the rules.</li>
-<li><strong>Legal obligations</strong> (art. 6(1)(c)): answering valid requests from authorities.</li>
-</ul>
+<!-- ================= MODES ================= -->
+<section id="modes">
+  <div class="wrap">
+    <div class="head center">
+      <p class="kicker reveal"><span data-en>Two modes</span><span data-ro>Două moduri</span></p>
+      <h2 class="title reveal"><span data-en>Looking for love, or just the vibe?</span><span data-ro>Cauți dragoste sau doar atmosferă?</span></h2>
+      <p class="intro reveal"><span data-en>Switch any time. The whole app changes colour with you. Try it on this page.</span><span data-ro>Schimbi oricând. Toată aplicația își schimbă culoarea odată cu tine. Încearcă pe pagina asta.</span></p>
+    </div>
+    <div class="modes">
+      <article class="mode dating reveal">
+        <span class="tag">Dating</span>
+        <h3><span data-en>Rose, for dating.</span><span data-ro>Roz, pentru dating.</span></h3>
+        <p><span data-en>See only people who fit what you're looking for, and who are looking for someone like you.</span><span data-ro>Vezi doar oamenii care se potrivesc cu ce cauți și care caută pe cineva ca tine.</span></p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Filters that work both ways: gender and age</span><span data-ro>Filtre în ambele sensuri: gen și vârstă</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>A music match score for everyone around</span><span data-ro>Un procent de potrivire muzicală pentru fiecare</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Hearts when you match</span><span data-ro>Inimioare când vă potriviți</span></li>
+        </ul>
+        <button class="btn small" type="button" data-set-mode="dating"><span data-en>See it in rose</span><span data-ro>Vezi în roz</span></button>
+      </article>
+      <article class="mode vibing reveal" style="--d:.1s">
+        <span class="tag">Vibe</span>
+        <h3><span data-en>Electric blue, for the vibe.</span><span data-ro>Albastru electric, pentru atmosferă.</span></h3>
+        <p><span data-en>See everyone who just wants to meet people and discover new music. No filters, no pressure.</span><span data-ro>Vezi pe toată lumea care vrea doar să cunoască oameni și muzică nouă. Fără filtre, fără presiune.</span></p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Everyone in Vibe mode in the room</span><span data-ro>Toți cei din cameră în modul Vibe</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Swap songs, make friends</span><span data-ro>Schimbați piese, faceți-vă prieteni</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Music notes when you connect</span><span data-ro>Note muzicale când vă conectați</span></li>
+        </ul>
+        <button class="btn small" type="button" data-set-mode="vibing"><span data-en>See it in blue</span><span data-ro>Vezi în albastru</span></button>
+      </article>
+    </div>
+  </div>
+</section>
 
-<h2>How long it is kept</h2>
-<ul>
-<li><strong>Room position and Bluetooth readings</strong>: removed from the radar 45 seconds after you close Aura or leave the room, and deleted from the server within about 20 minutes. Your last precise position is kept for at most one hour, only to spot fake locations.</li>
-<li><strong>Waves and chats with people who are not your friends</strong>: deleted 24 hours after the first wave or the match.</li>
-<li><strong>Chats with friends</strong>: kept until one of you removes the friendship or deletes the account.</li>
-<li><strong>Contact details you shared</strong>: kept until you stop sharing them, the friendship ends, either of you blocks the other, or an account is deleted. Your details are not stored anywhere else on the server.</li>
-<li><strong>Profile, photo and music</strong>: kept until you change them or delete your account. When you change your photo, the old one is deleted.</li>
-<li><strong>Blocks and reports</strong>: kept until either account is deleted.</li>
-<li><strong>Deleted accounts</strong>: removed immediately from the live database. Encrypted backups kept by our hosting provider roll over within a few days.</li>
-</ul>
+<!-- ================= PRIVACY ================= -->
+<section id="privacy">
+  <div class="wrap privacy">
+    <div>
+      <p class="kicker reveal"><span data-en>Privacy</span><span data-ro>Confidențialitate</span></p>
+      <h2 class="title reveal"><span data-en>You decide who sees you.</span><span data-ro>Tu decizi cine te vede.</span></h2>
+      <p class="intro reveal"><span data-en>Aura was built around one idea: being seen by the people in the room with you, and nobody else.</span><span data-ro>Aura a fost construită în jurul unei idei: să te vadă oamenii din aceeași cameră cu tine, și nimeni altcineva.</span></p>
+      <div class="shield" aria-hidden="true"><div class="orbit"><i></i></div><div class="orbit o2"><i></i></div><svg class="big"><use href="#i-shield"/></svg></div>
+    </div>
+    <ul class="promises">
+      <li class="reveal"><svg aria-hidden="true"><use href="#i-check"/></svg><p><b><span data-en>Only while Aura is open</span><span data-ro>Doar cât timp Aura e deschisă</span></b><span><span data-en>Close the app and you leave the room. Ghost mode hides you completely.</span><span data-ro>Închizi aplicația și ieși din cameră. Modul Fantomă te ascunde complet.</span></span></p></li>
+      <li class="reveal" style="--d:.05s"><svg aria-hidden="true"><use href="#i-check"/></svg><p><b><span data-en>Your exact position is never shown</span><span data-ro>Poziția ta exactă nu e arătată nimănui</span></b><span><span data-en>Distance only appears after you've both waved, and never as a point on a map.</span><span data-ro>Distanța apare doar după ce v-ați salutat amândoi și niciodată ca un punct pe hartă.</span></span></p></li>
+      <li class="reveal" style="--d:.1s"><svg aria-hidden="true"><use href="#i-check"/></svg><p><b><span data-en>Chats don't pile up</span><span data-ro>Conversațiile nu se adună</span></b><span><span data-en>Chats with people who aren't your friends are deleted after 24 hours.</span><span data-ro>Conversațiile cu cei care nu îți sunt prieteni se șterg după 24 de ore.</span></span></p></li>
+      <li class="reveal" style="--d:.15s"><svg aria-hidden="true"><use href="#i-check"/></svg><p><b><span data-en>No ads, no tracking</span><span data-ro>Fără reclame, fără urmărire</span></b><span><span data-en>We don't sell your data, and Aura doesn't follow you across other apps. This website doesn't track you either.</span><span data-ro>Nu îți vindem datele, iar Aura nu te urmărește în alte aplicații. Nici site-ul acesta nu te urmărește.</span></span></p></li>
+      <li class="reveal" style="--d:.2s"><svg aria-hidden="true"><use href="#i-check"/></svg><p><b><span data-en>Delete everything, any time</span><span data-ro>Ștergi tot, oricând</span></b><span><span data-en>Your account, photo and chats, in two taps from your profile.</span><span data-ro>Contul, poza și conversațiile, din două atingeri în profil.</span></span></p></li>
+      <li class="reveal" style="--d:.25s"><a class="btn ghost small" href="legal.html#privacy"><svg aria-hidden="true"><use href="#i-lock"/></svg><span data-en>Read the privacy policy</span><span data-ro>Citește politica de confidențialitate</span></a></li>
+    </ul>
+  </div>
+</section>
 
-<h2>Who processes it for us</h2>
-<ul>
-<li><strong>Supabase</strong> hosts Aura's database, sign-in and photos in the European Union (Frankfurt, Germany).</li>
-<li><strong>Google</strong> handles Sign in with Google, if you choose it. Aura receives only your name and email address.</li>
-<li><strong>Apple</strong> handles Sign in with Apple and Apple Music access. When you search for a song or artist, your search words are sent to Apple's public music catalog. No account details are sent.</li>
-<li><strong>Spotify, YouTube or Apple Music</strong>: when you share a song link to Aura, Aura opens that public link to read the song title and artist.</li>
-<li><strong>Last.fm</strong>, only if you connect it: Aura reads your recent tracks using your username.</li>
-</ul>
-<p>Some of these companies are based in the United States. Where data leaves the EU, it is protected by the EU–US Data Privacy Framework or the European Commission's Standard Contractual Clauses.</p>
+<!-- ================= ROMANIA ================= -->
+<section id="romania">
+  <div class="wrap">
+    <div class="map-card reveal">
+      <div>
+        <p class="kicker"><span data-en>Made in Romania</span><span data-ro>Făcută în România</span></p>
+        <h2 class="title"><span data-en>Launching here first.</span><span data-ro>Începem de aici.</span></h2>
+        <p class="intro"><span data-en>Aura is made in Romania, in Romanian and English, for the places where people already meet: university halls, cafés, food courts and buses in our cities.</span><span data-ro>Aura e făcută în România, în română și engleză, pentru locurile unde oamenii se întâlnesc deja: amfiteatre, cafenele, food court-uri și autobuze din orașele noastre.</span></p>
+        <div class="stats">
+          <div class="stat"><b>RO · EN</b><small><span data-en>both languages</span><span data-ro>ambele limbi</span></small></div>
+          <div class="stat"><b>18+</b><small><span data-en>adults only</span><span data-ro>doar adulți</span></small></div>
+          <div class="stat"><b>0</b><small><span data-en>ads or trackers</span><span data-ro>reclame sau trackere</span></small></div>
+        </div>
+      </div>
+      <div class="map" role="img" aria-label="Map of Romania with glowing cities: București, Cluj-Napoca, Iași, Timișoara, Brașov, Constanța, Sibiu, Oradea and Craiova">
+        <svg viewBox="-20 -20 640 464" aria-hidden="true">
+          <path class="land" d="M498.4,257.7L504.8,266.8L513.2,271.6L532.2,276.8L533.7,276.1L534,275.2L532.6,273.9L532.4,272.2L533.3,270L535.9,270L540.4,271.9L548.5,269.1L560.4,261.9L571.5,260.4L581.6,264.7L586.7,269.7L590,274.5L588.9,280.3L588.2,283.9L585.6,299.1L583.8,304.7L581,311.2L549.6,318.6L551.6,315.1L551,308.7L549.6,304L552.5,299.5L545.7,298L542.6,300.3L540.1,304.6L542.1,314.1L538.8,319.4L537.5,322.3L537.3,329.3L535.3,332.4L534.8,335.6L539.9,334.9L537.7,340.8L528.2,352.4L524.9,359.3L525.8,386.8L521.6,403.2L521.4,408.1L511.5,408.2L508.4,407.9L499.1,405.5L488.5,401L482.3,392.6L478.4,386.5L469.5,389.3L467.8,388.5L465.4,385.6L458.5,383.6L450.3,383.6L431.6,372.6L429.6,370.6L414.8,372.6L393,378L376.2,384.8L358.8,396.8L351.7,405.9L343.6,410.8L332.1,414.3L311.4,413L290,408.4L266.8,403.5L254.2,406.2L237.2,404.3L211.9,398.3L192.9,396.5L174.1,400L171,397.4L170.2,394.3L171,390L173.7,386.5L178.1,383.9L180.5,381.3L180.8,378.6L175.7,374.1L165.3,368.2L160.9,364.5L160,363.6L159.6,360.2L157.6,357.6L153.4,355.6L150.3,352.1L148.1,347.1L148.5,342.3L151.6,337.9L155.8,335.9L160.7,336.5L162.9,335.2L162,332.1L157.2,328.1L148.3,323.2L139.3,325.8L130,336.1L123.4,337.8L119.4,330.9L112.1,326.7L101.8,325.5L95.4,322.9L93.2,319L88.5,315.9L78.6,312.7L78.4,309.5L80.2,308.9L83.7,308.6L88.3,307.8L89.2,306.1L89.2,304.6L85.5,302.4L81.7,301.1L79.7,299.7L78.4,298.2L78.2,296.6L79.3,295.4L80.8,295.4L82.4,294.5L83,290.7L85.2,287.6L86.6,286.5L86.6,284.4L85,282.3L83,280.4L79.9,279.4L70.4,276.1L65.6,271.7L62.7,271.6L57.9,269.1L53,265.1L48.6,259.6L44,256.1L42.7,254.7L42.7,253.4L43.3,251.8L43.3,250.2L42.2,244.8L42.9,239L42.7,233.8L42.7,231.4L41.8,230.6L40.9,231.4L39.8,232.4L38.7,232.6L35.2,228.8L30.7,220.8L27.9,218.2L22.1,214.5L17.3,211.5L13.8,204.9L10,199.7L12.4,197.6L26.3,194.7L32.7,197.6L35.8,196.5L38.7,194.1L40.2,192.2L40.4,190.1L41.8,187.6L46.6,186.4L59,187.9L64.1,184.4L65.8,182.4L66.9,178.3L68.2,174.8L72.7,173L72.7,169.9L72,166.5L74.6,158.9L76.2,155.8L78.6,154.6L81.7,152.3L87,147.3L85.7,143L86.8,139.8L92.3,132L96.5,124.5L96.5,120.7L97.1,117.3L100.7,113.8L104.6,109.1L109.7,94.4L111.7,91.9L115,89.2L117.4,86.4L117.7,76.8L120.1,74.1L124.7,70.8L129.1,65.8L132.9,60L135.5,57.1L139.3,56.5L143.5,54L147.9,53.3L152.3,54.3L155.2,53.7L159.4,50.8L169.9,40L171.5,37.8L173.7,36.3L182.5,32.6L184.7,28.8L187.6,25.4L191.6,25.7L204.1,34L217.6,33.5L220,33.8L220.9,34L222.5,34.8L240.5,38.9L243.2,38.4L244.1,38L251.1,41.5L257.5,41L263.7,38.6L270.1,37.8L275.8,39.2L280.3,44.1L291.7,54.2L295,58L300.3,57.5L306.1,55.6L312,48.8L330.1,41L343.8,39.2L357.2,36L372.9,33.8L377.3,27.6L380,23.1L381.7,15.2L390.1,12.9L398.1,11.4L400.9,10.3L406.7,10L411.1,10.6L418.1,14.6L423,19.5L425,23.5L429.2,29L433.6,36.8L438.4,47.1L439.3,52.3L441.3,58L444.8,64.9L451.7,72.5L452.8,74.1L455.9,79.4L461.8,91.3L466.9,96.1L471.3,101.3L473.3,106.5L476.6,111.2L483.9,117.5L489.8,123.1L494.7,139.5L498,147.1L500.2,152.9L499.1,164.6L500.4,169.6L497.8,178.8L492.7,197.1L491.6,211.6L492.5,219.6L492.5,224.6L493.8,227.8L495.1,234.6L495.4,240.4L493.6,242.1L490.9,243.4L490.1,244.7L492.3,247.3L495.4,252.1L498.4,257.7Z"/>
+          <g class="city capital"><circle class="halo" cx="369.2" cy="347.8" r="16" fill="var(--pop)" style="animation-delay:0.00s"/><circle class="dotc" cx="369.2" cy="347.8" r="8" fill="var(--pop)"/><text x="383.2" y="352.8">București</text></g>
+          <g class="city"><circle class="halo" cx="217.3" cy="141.4" r="14" fill="var(--indie)" style="animation-delay:0.35s"/><circle class="dotc" cx="217.3" cy="141.4" r="6" fill="var(--indie)"/><text x="229.3" y="146.4">Cluj-Napoca</text></g>
+          <g class="city"><circle class="halo" cx="461" cy="107.3" r="14" fill="var(--classical)" style="animation-delay:0.70s"/><circle class="dotc" cx="461" cy="107.3" r="6" fill="var(--classical)"/><text x="473" y="112.3">Iași</text></g>
+          <g class="city"><circle class="halo" cx="69.3" cy="231.4" r="14" fill="var(--rock)" style="animation-delay:1.05s"/><circle class="dotc" cx="69.3" cy="231.4" r="6" fill="var(--rock)"/><text x="81.3" y="236.4">Timișoara</text></g>
+          <g class="city"><circle class="halo" cx="338.5" cy="240.8" r="14" fill="var(--lofi)" style="animation-delay:1.40s"/><circle class="dotc" cx="338.5" cy="240.8" r="6" fill="var(--lofi)"/><text x="350.5" y="245.8">Brașov</text></g>
+          <g class="city"><circle class="halo" cx="524.4" cy="371.3" r="14" fill="var(--hiphop)" style="animation-delay:1.75s"/><circle class="dotc" cx="524.4" cy="371.3" r="6" fill="var(--hiphop)"/><text x="536.4" y="376.3">Constanța</text></g>
+          <g class="city"><circle class="halo" cx="248" cy="227.1" r="14" fill="var(--jazz)" style="animation-delay:2.10s"/><circle class="dotc" cx="248" cy="227.1" r="6" fill="var(--jazz)"/><text x="260" y="232.1">Sibiu</text></g>
+          <g class="city"><circle class="halo" cx="112.8" cy="117.1" r="14" fill="var(--electronic)" style="animation-delay:2.45s"/><circle class="dotc" cx="112.8" cy="117.1" r="6" fill="var(--electronic)"/><text x="124.8" y="122.1">Oradea</text></g>
+          <g class="city"><circle class="halo" cx="227.8" cy="356.3" r="14" fill="var(--pop)" style="animation-delay:2.80s"/><circle class="dotc" cx="227.8" cy="356.3" r="6" fill="var(--pop)"/><text x="239.8" y="361.3">Craiova</text></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Your rights</h2>
-<p>You can ask to see, correct, export or delete your data, object to how it is used, or restrict its use. Most of this you can do yourself in the app: edit your profile, turn on ghost mode, block people, or use <em>Profile › Delete account</em>. For anything else, email the address above and you will get an answer within 30 days.</p>
-<p>If you think your data has been misused, you can complain to the Romanian data protection authority, <strong>ANSPDCP</strong> (dataprotection.ro), or the authority in the EU country where you live.</p>
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head center">
+      <p class="kicker reveal">FAQ</p>
+      <h2 class="title reveal"><span data-en>Good questions.</span><span data-ro>Întrebări bune.</span></h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary><span data-en>Who can see me on Aura?</span><span data-ro>Cine mă poate vedea pe Aura?</span></summary>
+        <p><span data-en>Only people in the same room whose phones hear yours over Bluetooth, and only while you have Aura open on your screen. In Dating mode, only people who fit your filters (and whose filters you fit). Ghost mode or "Leave the room" hides you.</span><span data-ro>Doar oamenii din aceeași cameră ale căror telefoane îl aud pe al tău prin Bluetooth, și doar cât timp ai Aura deschisă pe ecran. În modul Dating, doar cei care se potrivesc filtrelor tale (și ale căror filtre te includ). Modul Fantomă sau „Ieși din cameră” te ascunde.</span></p></details>
+      <details class="reveal"><summary><span data-en>Can someone find out where I am?</span><span data-ro>Poate afla cineva unde sunt?</span></summary>
+        <p><span data-en>No. Your exact position is never shown to anyone. After you've both waved, the other person sees a rough distance (like "2–5 m"), and outdoors a rough direction. Aura also ignores faked locations.</span><span data-ro>Nu. Poziția ta exactă nu e arătată nimănui. După ce v-ați salutat amândoi, celălalt vede o distanță aproximativă (de exemplu „2–5 m”) și, afară, o direcție aproximativă. Aura ignoră și locațiile false.</span></p></details>
+      <details class="reveal"><summary><span data-en>Do I need Bluetooth?</span><span data-ro>Am nevoie de Bluetooth?</span></summary>
+        <p><span data-en>Yes. Bluetooth is how Aura knows who is really in the same room. It only runs while Aura is open; nothing runs in the background.</span><span data-ro>Da. Prin Bluetooth știe Aura cine e cu adevărat în aceeași cameră. Funcționează doar cât timp Aura e deschisă; nimic nu rulează în fundal.</span></p></details>
+      <details class="reveal"><summary><span data-en>What happens to my chats?</span><span data-ro>Ce se întâmplă cu conversațiile mele?</span></summary>
+        <p><span data-en>Waves and chats disappear 24 hours after they start. If you both tap "Add friend", the chat stays, and you can choose to share your WhatsApp, number or Instagram.</span><span data-ro>Saluturile și conversațiile dispar la 24 de ore după ce încep. Dacă apăsați amândoi „Adaugă prieten”, conversația rămâne și poți alege să dai WhatsApp-ul, numărul sau Instagramul.</span></p></details>
+      <details class="reveal"><summary><span data-en>Which music apps work with Aura?</span><span data-ro>Ce aplicații de muzică merg cu Aura?</span></summary>
+        <p><span data-en>Apple Music shows what you're playing by itself. From Spotify or YouTube Music, share a song into Aura. You can also pick a song by hand, or connect Last.fm.</span><span data-ro>Apple Music arată singur ce asculți. Din Spotify sau YouTube Music, trimite piesa în Aura. Poți alege și o piesă de mână sau conecta Last.fm.</span></p></details>
+      <details class="reveal"><summary><span data-en>Who is Aura for?</span><span data-ro>Pentru cine e Aura?</span></summary>
+        <p><span data-en>Adults, 18 and over. It's checked when you sign up. Aura starts on iPhone.</span><span data-ro>Pentru adulți, de la 18 ani în sus. Se verifică la înscriere. Aura pornește pe iPhone.</span></p></details>
+      <details class="reveal"><summary><span data-en>How do I get it?</span><span data-ro>Cum o obțin?</span></summary>
+        <p><span data-en>Aura is in testing right now. Ask for early access below and you'll get an invitation through Apple's TestFlight app.</span><span data-ro>Aura e acum în teste. Cere acces timpuriu mai jos și vei primi o invitație prin aplicația TestFlight a Apple.</span></p></details>
+    </div>
+  </div>
+</section>
 
-<h2>Age</h2>
-<p>Aura is only for people aged 18 and over. Accounts with a birth date under 18 can't be created. If you believe someone under 18 is using Aura, report them in the app or email us and the account will be removed.</p>
+<!-- ================= JOIN ================= -->
+<section id="join">
+  <div class="wrap">
+    <div class="cta reveal">
+      <p class="kicker"><span data-en>Early access</span><span data-ro>Acces timpuriu</span></p>
+      <h2 class="title"><span data-en>Be the first glow in your room.</span><span data-ro>Fii prima aură din camera ta.</span></h2>
+      <p class="intro"><span data-en>Aura is being tested with a small group right now. Want in? Send a message and you'll get an invitation as soon as there's room.</span><span data-ro>Aura e testată acum cu un grup mic. Vrei să intri? Trimite un mesaj și primești o invitație imediat ce e loc.</span></p>
+      <a class="btn primary" id="join-mail" href="mailto:anghel.c.c@protonmail.com?subject=Aura%20early%20access"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-en>Ask for an invitation</span><span data-ro>Cere o invitație</span></a>
+      <div class="facts">
+        <span class="pill"><svg aria-hidden="true"><use href="#i-phone"/></svg>iPhone</span>
+        <span class="pill"><svg aria-hidden="true"><use href="#i-users"/></svg>18+</span>
+        <span class="pill"><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-en>Romania</span><span data-ro>România</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Security</h2>
-<p>All traffic is encrypted. Each person can only read their own data and what others in the same room are allowed to see; the database enforces this, not just the app. No system is perfectly secure, and if a breach affects you, you will be told as the law requires.</p>
-
-<h2>Changes</h2>
-<p>If this policy changes in a way that matters, Aura will tell you in the app before the change applies. The date at the top always shows the current version.</p>
-</article>
-
-<!-- ================= PRIVACY · RO ================= -->
-<article class="doc" data-doc="privacy" lang="ro">
-<h1>Politica de confidențialitate</h1>
-<p class="meta">În vigoare din 7 octombrie 2026</p>
-<p class="lead">Aura îți arată cine e în apropiere și ce ascultă. Pentru asta trebuie să știe aproximativ unde ești și cine e în aceeași încăpere. Aici afli exact ce colectează Aura, de ce, cine vede și cât timp păstrăm.</p>
-
-<div class="box">
-<p><strong>Pe scurt</strong></p>
-<ul>
-<li>Ceilalți te văd doar cât timp ai Aura deschisă pe ecran, niciodată cu modul fantomă pornit și nici după ce apeși <em>Ieși din cameră</em>.</li>
-<li>Poziția ta exactă nu e arătată nimănui. Distanța și direcția apar doar după ce v-ați salutat amândoi.</li>
-<li>Poziția din încăpere se șterge în aproximativ 20 de minute după ce pleci. Conversațiile cu persoane care nu îți sunt prieteni se șterg după 24 de ore.</li>
-<li>Fără reclame, fără urmărire în alte aplicații, iar datele tale nu se vând niciodată.</li>
-<li>Îți poți șterge contul și tot ce conține direct din aplicație, oricând.</li>
-</ul>
-</div>
-
-<h2>Cine răspunde</h2>
-<p>Aura este administrată de Anghel Ciobanu, dezvoltator persoană fizică din România, operator al datelor descrise aici. Pentru orice întrebare despre datele tale:</p>
-<div class="mail"><code class="addr">anghel.c.c@protonmail.com</code><button class="copy" type="button" data-en>Copy</button><button class="copy" type="button" data-ro>Copiază</button></div>
-
-<h2>Ce colectează Aura</h2>
-<div class="tbl"><table>
-<thead><tr><th>Informația</th><th>La ce folosește</th><th>Cine o vede</th></tr></thead>
-<tbody>
-<tr><td><strong>Autentificare</strong>: Apple ID, contul Google (nume și email) sau adresa de email</td><td>Crearea și protejarea contului</td><td>Doar tu. Cu Sign in with Apple îți poți ascunde emailul real.</td></tr>
-<tr><td><strong>Profil</strong>: prenume, data nașterii, gen, poză, o scurtă descriere</td><td>Să arate cine ești; verificarea vârstei de 18+</td><td>Cei din aceeași încăpere văd numele, vârsta (nu data nașterii), poza și descrierea</td></tr>
-<tr><td><strong>Muzică</strong>: artiști preferați, stiluri, piesa pe care o asculți, piesele trimise</td><td>Culoarea aurei, scorul de potrivire și „ascultă acum”</td><td>Cei din aceeași încăpere și persoanele cu care ești conectat</td></tr>
-<tr><td><strong>Preferințe de dating</strong>: pe cine vrei să vezi și un interval de vârstă</td><td>Doar în modul Dating, ca să aleagă cine apare pe radar</td><td>Nimeni. Nu apar niciodată pe profil.</td></tr>
-<tr><td><strong>Locație</strong>: poziție GPS aproximativă și precizia ei, cât timp Aura e deschisă</td><td>Arătarea direcției către cineva după ce v-ați salutat amândoi și depistarea locațiilor false. Cine e în încăpere decide doar Bluetooth.</td><td>Nimeni. E folosită doar pentru a compara distanțe.</td></tr>
-<tr><td><strong>Bluetooth</strong>: un cod aleatoriu care se schimbă des și cât de puternic îl aud telefoanele din jur</td><td>Diferența între „foarte aproape”, „aceeași încăpere” și „în apropiere”</td><td>Nimeni. Codul nu e legat de numele tău în afara serverului Aura.</td></tr>
-<tr><td><strong>Interacțiuni</strong>: saluturi, mesaje, cereri de prietenie</td><td>Să te poți conecta cu alții</td><td>Tu și cealaltă persoană</td></tr>
-<tr><td><strong>Date de contact pe care alegi să le dai</strong>: număr de telefon (pentru apeluri, SMS sau WhatsApp) și numele de Instagram</td><td>Ca un prieten să te poată contacta în afara Aura</td><td>Doar prietenul căruia i le-ai dat</td></tr>
-<tr><td><strong>Siguranță</strong>: persoane blocate, raportări trimise sau primite</td><td>Siguranța în Aura și respectarea Termenilor</td><td>Doar administratorul Aura, când analizează o raportare</td></tr>
-<tr><td><strong>Conexiuni opționale</strong>: acces Apple Music, nume de utilizator Last.fm</td><td>Citirea artiștilor preferați și a piesei curente</td><td>Doar rezultatul (artiști, piesa curentă), ca mai sus</td></tr>
-</tbody></table></div>
-<p>Aura nu colectează contacte, alte poze în afară de cea aleasă de tine, identificatori de publicitate sau locația ta când aplicația e închisă. Aura nu folosește instrumente de analiză sau publicitate.</p>
-
-<h2>Modul Dating</h2>
-<p>Alegerea genului tău și a persoanelor pe care vrei să le vezi în modul Dating poate dezvălui informații despre orientarea ta sexuală. Aura folosește aceste setări doar pentru a filtra radarul și nu le arată nimănui. Alegându-le, îți dai consimțământul explicit pentru această folosire. Îl poți retrage oricând trecând în modul Vibe sau schimbând preferințele din profil.</p>
-
-<h2>Temeiul legal</h2>
-<ul>
-<li><strong>Furnizarea serviciului cerut</strong> (GDPR art. 6 alin. 1 lit. b): cont, profil, muzică, prezența în încăpere, saluturi și conversații.</li>
-<li><strong>Consimțământul tău</strong> (art. 6 alin. 1 lit. a și art. 9 alin. 2 lit. a): permisiunile de locație și Bluetooth, Apple Music, Last.fm și setările modului Dating. Îl poți retrage din setările telefonului sau din Aura.</li>
-<li><strong>Interesul legitim privind siguranța</strong> (art. 6 alin. 1 lit. f): blocări, raportări, verificarea vârstei și păstrarea dovezilor când cineva încalcă regulile.</li>
-<li><strong>Obligații legale</strong> (art. 6 alin. 1 lit. c): răspunsuri la cereri valide ale autorităților.</li>
-</ul>
-
-<h2>Cât timp păstrăm datele</h2>
-<ul>
-<li><strong>Poziția din încăpere și citirile Bluetooth</strong>: dispari de pe radar la 45 de secunde după ce închizi Aura sau ieși din cameră, iar datele se șterg de pe server în aproximativ 20 de minute. Ultima ta poziție precisă e păstrată cel mult o oră, doar pentru a depista locațiile false.</li>
-<li><strong>Saluturi și conversații cu persoane care nu îți sunt prieteni</strong>: se șterg la 24 de ore după primul salut sau după potrivire.</li>
-<li><strong>Conversații cu prietenii</strong>: rămân până când unul dintre voi anulează prietenia sau își șterge contul.</li>
-<li><strong>Datele de contact date unui prieten</strong>: rămân până nu le mai arăți, se încheie prietenia, unul dintre voi îl blochează pe celălalt sau se șterge un cont. Nu sunt păstrate în altă parte pe server.</li>
-<li><strong>Profil, poză și muzică</strong>: rămân până le schimbi sau îți ștergi contul. Când îți schimbi poza, cea veche se șterge.</li>
-<li><strong>Blocări și raportări</strong>: rămân până la ștergerea unuia dintre conturi.</li>
-<li><strong>Conturi șterse</strong>: dispar imediat din baza de date activă. Copiile de siguranță criptate ale furnizorului de găzduire se înlocuiesc în câteva zile.</li>
-</ul>
-
-<h2>Cine prelucrează datele pentru noi</h2>
-<ul>
-<li><strong>Supabase</strong> găzduiește baza de date, autentificarea și pozele Aura în Uniunea Europeană (Frankfurt, Germania).</li>
-<li><strong>Google</strong> se ocupă de autentificarea cu Google, dacă o alegi. Aura primește doar numele și adresa de email.</li>
-<li><strong>Apple</strong> se ocupă de Sign in with Apple și de accesul Apple Music. Când cauți o piesă sau un artist, cuvintele căutate sunt trimise catalogului muzical public Apple, fără date despre cont.</li>
-<li><strong>Spotify, YouTube sau Apple Music</strong>: când trimiți un link de piesă către Aura, Aura deschide acel link public ca să citească titlul și artistul.</li>
-<li><strong>Last.fm</strong>, doar dacă îl conectezi: Aura citește piesele ascultate recent folosind numele tău de utilizator.</li>
-</ul>
-<p>Unele dintre aceste companii sunt din Statele Unite. Când datele ies din UE, sunt protejate prin Cadrul UE–SUA privind protecția datelor sau prin Clauzele contractuale standard ale Comisiei Europene.</p>
-
-<h2>Drepturile tale</h2>
-<p>Poți cere să îți vezi, corectezi, exporți sau ștergi datele, te poți opune folosirii lor sau poți cere restricționarea. Majoritatea le poți face singur în aplicație: editezi profilul, pornești modul fantomă, blochezi persoane sau folosești <em>Profil › Șterge contul</em>. Pentru orice altceva scrie la adresa de mai sus și primești răspuns în cel mult 30 de zile.</p>
-<p>Dacă crezi că datele tale au fost folosite greșit, poți depune o plângere la <strong>ANSPDCP</strong> (dataprotection.ro) sau la autoritatea din țara UE în care locuiești.</p>
-
-<h2>Vârsta</h2>
-<p>Aura este doar pentru persoane de 18 ani sau mai mult. Nu se pot crea conturi cu o dată de naștere sub 18 ani. Dacă crezi că cineva sub 18 ani folosește Aura, raportează-l în aplicație sau scrie-ne și contul va fi șters.</p>
-
-<h2>Securitate</h2>
-<p>Tot traficul este criptat. Fiecare persoană poate citi doar datele proprii și ce au voie să vadă ceilalți din aceeași încăpere; regula e impusă de baza de date, nu doar de aplicație. Niciun sistem nu e perfect sigur, iar dacă o breșă te afectează, vei fi anunțat așa cum cere legea.</p>
-
-<h2>Modificări</h2>
-<p>Dacă politica se schimbă într-un mod important, Aura te anunță în aplicație înainte de aplicarea schimbării. Data de sus arată mereu versiunea curentă.</p>
-</article>
-
-<!-- ================= TERMS · EN ================= -->
-<article class="doc" data-doc="terms" lang="en" hidden>
-<h1>Terms of Use</h1>
-<p class="meta">Effective 6 October 2026</p>
-<p class="lead">These terms are the agreement between you and Anghel Ciobanu, who runs Aura. By creating an account you accept them, together with the <a href="#privacy">Privacy Policy</a>.</p>
-
-<h2>Who can use Aura</h2>
-<ul>
-<li>You must be at least 18 years old.</li>
-<li>You may have one account, and it must be about you: your real first name, your real age and a photo of yourself.</li>
-<li>You can't use Aura if you have been removed from it before.</li>
-</ul>
-
-<h2>The rules</h2>
-<p>Aura has <strong>zero tolerance</strong> for abusive content and behaviour. You must not:</p>
-<ul>
-<li>harass, threaten, stalk or intimidate anyone, in the app or in person;</li>
-<li>send sexual content to someone who hasn't clearly asked for it, or any sexual content involving minors;</li>
-<li>post hate speech, or content that attacks people for their race, ethnicity, religion, disability, gender, age or sexual orientation;</li>
-<li>pretend to be someone else, use a fake profile, or use Aura for spam, scams, advertising or selling;</li>
-<li>use Aura to follow or locate someone who doesn't want to be found;</li>
-<li>try to get around a block, copy other people's data, or interfere with the app or its servers.</li>
-</ul>
-
-<h2>Reports and enforcement</h2>
-<p>Every profile has <strong>Block</strong> and <strong>Report</strong>. Blocking takes effect immediately: you disappear from each other's radar and chats. Reports are reviewed within 24 hours. If a report shows the rules were broken, the content is removed and the account that broke them is suspended or removed, without notice where safety requires it. Where there is a risk to someone's safety, information may be passed to the police.</p>
-
-<h2>Meeting people</h2>
-<p>Aura helps you notice people around you; it doesn't check who they are. Meet in public places, tell a friend where you are, and leave if you feel unsafe. You are responsible for your own interactions with other users.</p>
-
-<h2>Your content</h2>
-<p>You keep ownership of your photo, bio and messages. You allow Aura to store and show them to other users only as needed to run the service, until you delete them or your account. Song titles, artist names and artwork belong to their owners; Aura only displays them and does not play music.</p>
-
-<h2>The service</h2>
-<p>Aura is free for now. A paid tier may be added later; nothing will be charged unless you choose to buy it. Aura is still being developed and is provided as it is: features may change, and Aura may be paused or ended. If Aura ends, you will be told in advance where possible.</p>
-
-<h2>Liability</h2>
-<p>Aura is not responsible for what other users say or do, or for losses caused by events outside its control. Nothing in these terms limits liability that can't be limited by law, including your rights as a consumer in the EU.</p>
-
-<h2>Ending your account</h2>
-<p>You can delete your account at any time under <em>Profile › Delete account</em>. Aura may suspend or remove accounts that break these terms.</p>
-
-<h2>Apple</h2>
-<p>If you downloaded Aura from the App Store, Apple's standard Licensed Application End User License Agreement also applies. These terms are between you and Anghel Ciobanu, not Apple, and Apple is not responsible for Aura or its support.</p>
-
-<h2>Law and disputes</h2>
-<p>Romanian law applies. If you have a complaint, email us first and we will try to fix it. You can also use the EU's consumer dispute services or go to the courts where you live.</p>
-
-<h2>Changes</h2>
-<p>If these terms change in a way that matters, you will be told in the app before the change applies. If you don't agree, you can delete your account.</p>
-</article>
-
-<!-- ================= TERMS · RO ================= -->
-<article class="doc" data-doc="terms" lang="ro" hidden>
-<h1>Termeni de utilizare</h1>
-<p class="meta">În vigoare din 6 octombrie 2026</p>
-<p class="lead">Acești termeni sunt acordul dintre tine și Anghel Ciobanu, care administrează Aura. Creând un cont, îi accepți împreună cu <a href="#privacy">Politica de confidențialitate</a>.</p>
-
-<h2>Cine poate folosi Aura</h2>
-<ul>
-<li>Trebuie să ai cel puțin 18 ani.</li>
-<li>Poți avea un singur cont, care trebuie să fie despre tine: prenumele real, vârsta reală și o poză cu tine.</li>
-<li>Nu poți folosi Aura dacă ai mai fost eliminat din aplicație.</li>
-</ul>
-
-<h2>Regulile</h2>
-<p>Aura are <strong>toleranță zero</strong> față de conținutul și comportamentul abuziv. Nu ai voie:</p>
-<ul>
-<li>să hărțuiești, să ameninți, să urmărești sau să intimidezi pe cineva, în aplicație sau în persoană;</li>
-<li>să trimiți conținut sexual cuiva care nu l-a cerut clar, sau orice conținut sexual care implică minori;</li>
-<li>să publici discurs al urii sau conținut care atacă oameni pentru rasă, etnie, religie, dizabilitate, gen, vârstă sau orientare sexuală;</li>
-<li>să te dai drept altcineva, să folosești un profil fals sau să folosești Aura pentru spam, înșelătorii, reclame sau vânzări;</li>
-<li>să folosești Aura ca să urmărești sau să localizezi pe cineva care nu vrea să fie găsit;</li>
-<li>să ocolești o blocare, să copiezi datele altora sau să afectezi aplicația ori serverele ei.</li>
-</ul>
-
-<h2>Raportări și sancțiuni</h2>
-<p>Fiecare profil are <strong>Blochează</strong> și <strong>Raportează</strong>. Blocarea are efect imediat: dispăreți unul de pe radarul și din conversațiile celuilalt. Raportările sunt analizate în cel mult 24 de ore. Dacă o raportare arată că regulile au fost încălcate, conținutul este șters, iar contul vinovat este suspendat sau eliminat, fără notificare când siguranța o cere. Când există un risc pentru siguranța cuiva, informațiile pot fi transmise poliției.</p>
-
-<h2>Întâlnirile</h2>
-<p>Aura te ajută să observi oamenii din jur; nu verifică cine sunt. Întâlnește-te în locuri publice, spune-i unui prieten unde ești și pleacă dacă nu te simți în siguranță. Ești responsabil pentru propriile interacțiuni cu ceilalți utilizatori.</p>
-
-<h2>Conținutul tău</h2>
-<p>Poza, descrierea și mesajele rămân ale tale. Îi permiți Aurei să le stocheze și să le arate altor utilizatori doar cât e nevoie pentru funcționarea serviciului, până le ștergi sau îți ștergi contul. Titlurile pieselor, numele artiștilor și copertele aparțin proprietarilor lor; Aura doar le afișează și nu redă muzică.</p>
-
-<h2>Serviciul</h2>
-<p>Deocamdată Aura este gratuită. Mai târziu poate apărea o variantă cu plată; nu ți se va percepe nimic dacă nu alegi să o cumperi. Aura este încă în dezvoltare și este oferită ca atare: funcțiile se pot schimba, iar Aura poate fi oprită temporar sau definitiv. Dacă Aura se închide, vei fi anunțat din timp când e posibil.</p>
-
-<h2>Răspundere</h2>
-<p>Aura nu răspunde pentru ce spun sau fac alți utilizatori sau pentru pierderi cauzate de evenimente din afara controlului ei. Nimic din acești termeni nu limitează răspunderea care nu poate fi limitată prin lege, inclusiv drepturile tale de consumator în UE.</p>
-
-<h2>Închiderea contului</h2>
-<p>Îți poți șterge contul oricând din <em>Profil › Șterge contul</em>. Aura poate suspenda sau elimina conturile care încalcă acești termeni.</p>
-
-<h2>Apple</h2>
-<p>Dacă ai descărcat Aura din App Store, se aplică și Acordul de licență standard Apple pentru utilizatorul final (Licensed Application EULA). Acești termeni sunt între tine și Anghel Ciobanu, nu Apple, iar Apple nu răspunde pentru Aura sau pentru asistența ei.</p>
-
-<h2>Legea aplicabilă și litigii</h2>
-<p>Se aplică legea română. Dacă ai o reclamație, scrie-ne mai întâi și vom încerca să rezolvăm. Poți folosi și serviciile UE de soluționare a litigiilor cu consumatorii sau te poți adresa instanțelor de unde locuiești.</p>
-
-<h2>Modificări</h2>
-<p>Dacă termenii se schimbă într-un mod important, vei fi anunțat în aplicație înainte de aplicarea schimbării. Dacă nu ești de acord, îți poți șterge contul.</p>
-</article>
-
-<!-- ================= SUPPORT · EN ================= -->
-<article class="doc" data-doc="support" lang="en" hidden>
-<h1>Help &amp; Support</h1>
-<p class="lead">Questions, problems, or someone making you uncomfortable? Write to us and you'll get an answer, usually within a day.</p>
-<div class="mail"><code class="addr">anghel.c.c@protonmail.com</code><button class="copy" type="button" data-en>Copy</button><button class="copy" type="button" data-ro>Copiază</button></div>
-<p class="meta" style="margin-top:.8em">For a problem with a person, use <strong>Report</strong> on their profile in the app first. It reaches us faster and includes the details we need.</p>
-
-<h2>Common questions</h2>
-<details><summary>Nobody appears on my radar</summary><p>Everyone must have Aura open on screen. Check that Bluetooth and Location are on and allowed for Aura in Settings. In Dating mode, your gender and age filters must fit both ways; switch to Vibe to see everyone.</p></details>
-<details><summary>How do I show the song I'm playing?</summary><p>On Spotify or YouTube Music, open the song, tap Share and choose Aura. If Aura isn't in the list, tap More and switch it on. On Apple Music, go to <em>Profile › Music › Connect Apple Music</em> once and Aura picks it up by itself. You can also search for a song in Aura.</p></details>
-<details><summary>Why can't I see where someone is?</summary><p>Distance and direction appear only after you have both waved. Until then you only see "very close", "same room" or "nearby".</p></details>
-<details><summary>How do I hide?</summary><p>Turn on ghost mode on the radar. You disappear from everyone's radar straight away but can still chat with people you are already connected with.</p></details>
-<details><summary>Why did a chat disappear?</summary><p>Chats with people who are not your friends are deleted after 24 hours. Tap <em>Add friend</em> in a chat to keep it; it stays once you both agree.</p></details>
-<details><summary>How do I block or report someone?</summary><p>Open their profile and tap <em>Block</em> or <em>Report</em>. Blocking is instant. Reports are reviewed within 24 hours.</p></details>
-<details><summary>How do I give a friend my number or Instagram?</summary><p>Once you are friends, open your chat and tap <em>Share contact</em>. Choose WhatsApp, calls and texts, and/or Instagram. Only that friend sees it, and you can change or stop it from the same button.</p></details>
-<details><summary>How do I delete my account?</summary><p>Go to <em>Profile › Delete account</em>. Your profile, photo, chats and connections are deleted immediately.</p></details>
-
-<h2>Legal</h2>
-<p><a href="#privacy">Privacy Policy</a> · <a href="#terms">Terms of Use</a></p>
-</article>
-
-<!-- ================= SUPPORT · RO ================= -->
-<article class="doc" data-doc="support" lang="ro" hidden>
-<h1>Ajutor</h1>
-<p class="lead">Ai o întrebare, o problemă sau cineva te face să te simți inconfortabil? Scrie-ne și primești răspuns, de obicei în aceeași zi.</p>
-<div class="mail"><code class="addr">anghel.c.c@protonmail.com</code><button class="copy" type="button" data-en>Copy</button><button class="copy" type="button" data-ro>Copiază</button></div>
-<p class="meta" style="margin-top:.8em">Pentru o problemă cu o persoană, folosește mai întâi <strong>Raportează</strong> pe profilul ei din aplicație. Ajunge mai repede la noi și conține detaliile necesare.</p>
-
-<h2>Întrebări frecvente</h2>
-<details><summary>Nu apare nimeni pe radar</summary><p>Toată lumea trebuie să aibă Aura deschisă pe ecran. Verifică dacă Bluetooth și Locația sunt pornite și permise pentru Aura în Setări. În modul Dating, filtrele de gen și vârstă trebuie să se potrivească în ambele sensuri; treci pe Vibe ca să vezi pe toată lumea.</p></details>
-<details><summary>Cum arăt piesa pe care o ascult?</summary><p>În Spotify sau YouTube Music, deschide piesa, apasă Distribuie și alege Aura. Dacă Aura nu e în listă, apasă Mai mult și activeaz-o. Pentru Apple Music, intră o singură dată în <em>Profil › Muzică › Conectează Apple Music</em> și Aura o preia singură. Poți și căuta o piesă direct în Aura.</p></details>
-<details><summary>De ce nu văd unde e cineva?</summary><p>Distanța și direcția apar doar după ce v-ați salutat amândoi. Până atunci vezi doar „foarte aproape”, „aceeași încăpere” sau „în apropiere”.</p></details>
-<details><summary>Cum mă ascund?</summary><p>Pornește modul fantomă de pe radar. Dispari imediat de pe radarul tuturor, dar poți vorbi în continuare cu persoanele cu care ești deja conectat.</p></details>
-<details><summary>De ce a dispărut o conversație?</summary><p>Conversațiile cu persoane care nu îți sunt prieteni se șterg după 24 de ore. Apasă <em>Adaugă prieten</em> în conversație ca să o păstrezi; rămâne după ce sunteți amândoi de acord.</p></details>
-<details><summary>Cum blochez sau raportez pe cineva?</summary><p>Deschide profilul persoanei și apasă <em>Blochează</em> sau <em>Raportează</em>. Blocarea are efect imediat. Raportările sunt analizate în cel mult 24 de ore.</p></details>
-<details><summary>Cum îi dau unui prieten numărul sau Instagramul?</summary><p>După ce sunteți prieteni, deschide conversația și apasă <em>Dă-i contactul</em>. Alege WhatsApp, apeluri și SMS și/sau Instagram. Doar acel prieten le vede, iar tu le poți modifica sau opri din același buton.</p></details>
-<details><summary>Cum îmi șterg contul?</summary><p>Intră în <em>Profil › Șterge contul</em>. Profilul, poza, conversațiile și conexiunile tale se șterg imediat.</p></details>
-
-<h2>Documente legale</h2>
-<p><a href="#privacy">Politica de confidențialitate</a> · <a href="#terms">Termeni de utilizare</a></p>
-</article>
-
-<footer><span data-en>Aura is made by Anghel Ciobanu, Romania.</span><span data-ro>Aura este realizată de Anghel Ciobanu, România.</span></footer>
 </main>
 
-<script>
-(function(){
-  var DOCS=['privacy','terms','support'];
-  var state={doc:'privacy',lang:'en'};
-  try{ if((navigator.language||'').toLowerCase().indexOf('ro')===0) state.lang='ro'; }catch(e){}
-  try{ var saved=localStorage.getItem('aura-legal-lang'); if(saved==='ro'||saved==='en') state.lang=saved; }catch(e){}
-  function readHash(){
-    var h=(location.hash||'').replace('#','').toLowerCase();
-    h.split(/[-_.]/).forEach(function(p){
-      if(DOCS.indexOf(p)>=0) state.doc=p;
-      if(p==='ro'||p==='en') state.lang=p;
-    });
-  }
-  function render(){
-    document.documentElement.lang=state.lang;
-    document.querySelectorAll('article.doc').forEach(function(a){
-      a.hidden=!(a.dataset.doc===state.doc && a.lang===state.lang);
-    });
-    document.querySelectorAll('[data-en]').forEach(function(el){el.hidden=state.lang!=='en'});
-    document.querySelectorAll('[data-ro]').forEach(function(el){el.hidden=state.lang!=='ro'});
-    document.querySelectorAll('nav button').forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.doc===state.doc))});
-    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===state.lang))});
-    var t={privacy:{en:'Privacy',ro:'Confidențialitate'},terms:{en:'Terms',ro:'Termeni'},support:{en:'Support',ro:'Ajutor'}};
-    document.title='Aura · '+t[state.doc][state.lang];
-  }
-  readHash(); render();
-  window.addEventListener('hashchange',function(){readHash();render();window.scrollTo(0,0)});
-  document.querySelectorAll('nav button').forEach(function(b){b.addEventListener('click',function(){state.doc=b.dataset.doc;render();window.scrollTo(0,0)})});
-  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){state.lang=b.dataset.lang;try{localStorage.setItem('aura-legal-lang',state.lang)}catch(e){};render()})});
-  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
-    var code=b.parentNode.querySelector('.addr'); var txt=code.textContent; var old=b.textContent;
-    function done(){b.textContent=state.lang==='ro'?'Copiat':'Copied';setTimeout(function(){b.textContent=old},1500)}
-    function fallback(){var r=document.createRange();r.selectNodeContents(code);var s=getSelection();s.removeAllRanges();s.addRange(r)}
-    try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
-  })});
-})();
-</script>
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top" aria-label="Aura"><i class="dot" aria-hidden="true"></i><span>aura</span></a>
+    <span>© 2026 Aura · <span data-en>Made in Romania</span><span data-ro>Făcută în România</span></span>
+    <nav aria-label="Legal">
+      <a href="legal.html#privacy"><span data-en>Privacy</span><span data-ro>Confidențialitate</span></a>
+      <a href="legal.html#terms"><span data-en>Terms</span><span data-ro>Termeni</span></a>
+      <a href="legal.html#support"><span data-en>Support</span><span data-ro>Ajutor</span></a>
+      <a href="mailto:anghel.c.c@protonmail.com"><span data-en>Contact</span><span data-ro>Contact</span></a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
