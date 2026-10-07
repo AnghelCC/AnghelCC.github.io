@@ -81,7 +81,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <div class="box">
 <p><strong>The short version</strong></p>
 <ul>
-<li>Other people only see you while you have Aura open and are scanning a room, and never while ghost mode is on.</li>
+<li>Other people only see you while you have Aura open on your screen, never while ghost mode is on, and not after you tap <em>Leave the room</em>.</li>
 <li>Your exact position is never shown to anyone. Distance and direction appear only after you have both waved.</li>
 <li>Your room position is deleted within about 20 minutes of leaving. Chats with people who are not your friends are deleted after 24 hours.</li>
 <li>No ads, no tracking across other apps, and we never sell your data.</li>
@@ -101,7 +101,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <tr><td><strong>Profile</strong>: first name, date of birth, gender, photo, a short bio</td><td>Showing who you are; confirming you are 18 or older</td><td>People in the same room see your name, age (not your birth date), photo and bio</td></tr>
 <tr><td><strong>Music</strong>: favourite artists, music styles, the song you are playing, songs you send</td><td>Your aura colour, the match score and "now playing"</td><td>People in the same room and people you are connected with</td></tr>
 <tr><td><strong>Dating preferences</strong>: who you want to see and an age range</td><td>Only in Dating mode, to decide who appears on your radar</td><td>No one. They are never shown on your profile.</td></tr>
-<tr><td><strong>Location</strong>: approximate GPS position and its accuracy, while scanning</td><td>Showing the direction to someone after you have both waved, and spotting fake locations. Who is in your room is decided by Bluetooth only.</td><td>No one. It is only used to compare distances.</td></tr>
+<tr><td><strong>Location</strong>: approximate GPS position and its accuracy, while Aura is open</td><td>Showing the direction to someone after you have both waved, and spotting fake locations. Who is in your room is decided by Bluetooth only.</td><td>No one. It is only used to compare distances.</td></tr>
 <tr><td><strong>Bluetooth</strong>: a random code that changes regularly, and how strongly nearby phones hear it</td><td>Telling "very close", "same room" and "nearby" apart</td><td>No one. The code is not linked to your name for anyone outside Aura's server.</td></tr>
 <tr><td><strong>Interactions</strong>: waves, chat messages, friend requests</td><td>Letting you connect with people</td><td>You and the other person</td></tr>
 <tr><td><strong>Contact details you choose to share</strong>: phone number (for calls, texts or WhatsApp) and Instagram username</td><td>Letting a friend reach you outside Aura</td><td>Only the friend you shared them with</td></tr>
@@ -115,7 +115,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 
 <h2>Why we are allowed to use it</h2>
 <ul>
-<li><strong>To provide the service you asked for</strong> (GDPR art. 6(1)(b)): your account, profile, music, room scanning, waves and chats.</li>
+<li><strong>To provide the service you asked for</strong> (GDPR art. 6(1)(b)): your account, profile, music, being in the room, waves and chats.</li>
 <li><strong>Your consent</strong> (art. 6(1)(a) and art. 9(2)(a)): location and Bluetooth permissions, Apple Music access, Last.fm, and the Dating mode settings. You can withdraw consent in your phone's settings or in Aura.</li>
 <li><strong>Legitimate interest in safety</strong> (art. 6(1)(f)): blocks, reports, the 18+ check, and keeping evidence when someone breaks the rules.</li>
 <li><strong>Legal obligations</strong> (art. 6(1)(c)): answering valid requests from authorities.</li>
@@ -123,7 +123,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 
 <h2>How long it is kept</h2>
 <ul>
-<li><strong>Room position and Bluetooth readings</strong>: removed from the radar 45 seconds after you stop scanning and deleted from the server within about 20 minutes. Your last precise position is kept for at most one hour, only to spot fake locations.</li>
+<li><strong>Room position and Bluetooth readings</strong>: removed from the radar 45 seconds after you close Aura or leave the room, and deleted from the server within about 20 minutes. Your last precise position is kept for at most one hour, only to spot fake locations.</li>
 <li><strong>Waves and chats with people who are not your friends</strong>: deleted 24 hours after the first wave or the match.</li>
 <li><strong>Chats with friends</strong>: kept until one of you removes the friendship or deletes the account.</li>
 <li><strong>Contact details you shared</strong>: kept until you stop sharing them, the friendship ends, either of you blocks the other, or an account is deleted. Your details are not stored anywhere else on the server.</li>
@@ -165,7 +165,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <div class="box">
 <p><strong>Pe scurt</strong></p>
 <ul>
-<li>Ceilalți te văd doar cât timp ai Aura deschisă și scanezi o încăpere, niciodată cu modul fantomă pornit.</li>
+<li>Ceilalți te văd doar cât timp ai Aura deschisă pe ecran, niciodată cu modul fantomă pornit și nici după ce apeși <em>Ieși din cameră</em>.</li>
 <li>Poziția ta exactă nu e arătată nimănui. Distanța și direcția apar doar după ce v-ați salutat amândoi.</li>
 <li>Poziția din încăpere se șterge în aproximativ 20 de minute după ce pleci. Conversațiile cu persoane care nu îți sunt prieteni se șterg după 24 de ore.</li>
 <li>Fără reclame, fără urmărire în alte aplicații, iar datele tale nu se vând niciodată.</li>
@@ -185,7 +185,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <tr><td><strong>Profil</strong>: prenume, data nașterii, gen, poză, o scurtă descriere</td><td>Să arate cine ești; verificarea vârstei de 18+</td><td>Cei din aceeași încăpere văd numele, vârsta (nu data nașterii), poza și descrierea</td></tr>
 <tr><td><strong>Muzică</strong>: artiști preferați, stiluri, piesa pe care o asculți, piesele trimise</td><td>Culoarea aurei, scorul de potrivire și „ascultă acum”</td><td>Cei din aceeași încăpere și persoanele cu care ești conectat</td></tr>
 <tr><td><strong>Preferințe de dating</strong>: pe cine vrei să vezi și un interval de vârstă</td><td>Doar în modul Dating, ca să aleagă cine apare pe radar</td><td>Nimeni. Nu apar niciodată pe profil.</td></tr>
-<tr><td><strong>Locație</strong>: poziție GPS aproximativă și precizia ei, în timpul scanării</td><td>Arătarea direcției către cineva după ce v-ați salutat amândoi și depistarea locațiilor false. Cine e în încăpere decide doar Bluetooth.</td><td>Nimeni. E folosită doar pentru a compara distanțe.</td></tr>
+<tr><td><strong>Locație</strong>: poziție GPS aproximativă și precizia ei, cât timp Aura e deschisă</td><td>Arătarea direcției către cineva după ce v-ați salutat amândoi și depistarea locațiilor false. Cine e în încăpere decide doar Bluetooth.</td><td>Nimeni. E folosită doar pentru a compara distanțe.</td></tr>
 <tr><td><strong>Bluetooth</strong>: un cod aleatoriu care se schimbă des și cât de puternic îl aud telefoanele din jur</td><td>Diferența între „foarte aproape”, „aceeași încăpere” și „în apropiere”</td><td>Nimeni. Codul nu e legat de numele tău în afara serverului Aura.</td></tr>
 <tr><td><strong>Interacțiuni</strong>: saluturi, mesaje, cereri de prietenie</td><td>Să te poți conecta cu alții</td><td>Tu și cealaltă persoană</td></tr>
 <tr><td><strong>Date de contact pe care alegi să le dai</strong>: număr de telefon (pentru apeluri, SMS sau WhatsApp) și numele de Instagram</td><td>Ca un prieten să te poată contacta în afara Aura</td><td>Doar prietenul căruia i le-ai dat</td></tr>
@@ -199,7 +199,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 
 <h2>Temeiul legal</h2>
 <ul>
-<li><strong>Furnizarea serviciului cerut</strong> (GDPR art. 6 alin. 1 lit. b): cont, profil, muzică, scanarea încăperii, saluturi și conversații.</li>
+<li><strong>Furnizarea serviciului cerut</strong> (GDPR art. 6 alin. 1 lit. b): cont, profil, muzică, prezența în încăpere, saluturi și conversații.</li>
 <li><strong>Consimțământul tău</strong> (art. 6 alin. 1 lit. a și art. 9 alin. 2 lit. a): permisiunile de locație și Bluetooth, Apple Music, Last.fm și setările modului Dating. Îl poți retrage din setările telefonului sau din Aura.</li>
 <li><strong>Interesul legitim privind siguranța</strong> (art. 6 alin. 1 lit. f): blocări, raportări, verificarea vârstei și păstrarea dovezilor când cineva încalcă regulile.</li>
 <li><strong>Obligații legale</strong> (art. 6 alin. 1 lit. c): răspunsuri la cereri valide ale autorităților.</li>
@@ -207,7 +207,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 
 <h2>Cât timp păstrăm datele</h2>
 <ul>
-<li><strong>Poziția din încăpere și citirile Bluetooth</strong>: dispari de pe radar la 45 de secunde după ce oprești scanarea, iar datele se șterg de pe server în aproximativ 20 de minute. Ultima ta poziție precisă e păstrată cel mult o oră, doar pentru a depista locațiile false.</li>
+<li><strong>Poziția din încăpere și citirile Bluetooth</strong>: dispari de pe radar la 45 de secunde după ce închizi Aura sau ieși din cameră, iar datele se șterg de pe server în aproximativ 20 de minute. Ultima ta poziție precisă e păstrată cel mult o oră, doar pentru a depista locațiile false.</li>
 <li><strong>Saluturi și conversații cu persoane care nu îți sunt prieteni</strong>: se șterg la 24 de ore după primul salut sau după potrivire.</li>
 <li><strong>Conversații cu prietenii</strong>: rămân până când unul dintre voi anulează prietenia sau își șterge contul.</li>
 <li><strong>Datele de contact date unui prieten</strong>: rămân până nu le mai arăți, se încheie prietenia, unul dintre voi îl blochează pe celălalt sau se șterge un cont. Nu sunt păstrate în altă parte pe server.</li>
@@ -352,7 +352,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <p class="meta" style="margin-top:.8em">For a problem with a person, use <strong>Report</strong> on their profile in the app first. It reaches us faster and includes the details we need.</p>
 
 <h2>Common questions</h2>
-<details><summary>Nobody appears on my radar</summary><p>Everyone must have Aura open and tap <em>Scan the room</em>. Check that Bluetooth and Location are on and allowed for Aura in Settings. In Dating mode, your gender and age filters must fit both ways; switch to Vibe to see everyone.</p></details>
+<details><summary>Nobody appears on my radar</summary><p>Everyone must have Aura open on screen. Check that Bluetooth and Location are on and allowed for Aura in Settings. In Dating mode, your gender and age filters must fit both ways; switch to Vibe to see everyone.</p></details>
 <details><summary>How do I show the song I'm playing?</summary><p>On Spotify or YouTube Music, open the song, tap Share and choose Aura. If Aura isn't in the list, tap More and switch it on. On Apple Music, go to <em>Profile › Music › Connect Apple Music</em> once and Aura picks it up by itself. You can also search for a song in Aura.</p></details>
 <details><summary>Why can't I see where someone is?</summary><p>Distance and direction appear only after you have both waved. Until then you only see "very close", "same room" or "nearby".</p></details>
 <details><summary>How do I hide?</summary><p>Turn on ghost mode on the radar. You disappear from everyone's radar straight away but can still chat with people you are already connected with.</p></details>
@@ -373,7 +373,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <p class="meta" style="margin-top:.8em">Pentru o problemă cu o persoană, folosește mai întâi <strong>Raportează</strong> pe profilul ei din aplicație. Ajunge mai repede la noi și conține detaliile necesare.</p>
 
 <h2>Întrebări frecvente</h2>
-<details><summary>Nu apare nimeni pe radar</summary><p>Toată lumea trebuie să aibă Aura deschisă și să apese <em>Scanează încăperea</em>. Verifică dacă Bluetooth și Locația sunt pornite și permise pentru Aura în Setări. În modul Dating, filtrele de gen și vârstă trebuie să se potrivească în ambele sensuri; treci pe Vibe ca să vezi pe toată lumea.</p></details>
+<details><summary>Nu apare nimeni pe radar</summary><p>Toată lumea trebuie să aibă Aura deschisă pe ecran. Verifică dacă Bluetooth și Locația sunt pornite și permise pentru Aura în Setări. În modul Dating, filtrele de gen și vârstă trebuie să se potrivească în ambele sensuri; treci pe Vibe ca să vezi pe toată lumea.</p></details>
 <details><summary>Cum arăt piesa pe care o ascult?</summary><p>În Spotify sau YouTube Music, deschide piesa, apasă Distribuie și alege Aura. Dacă Aura nu e în listă, apasă Mai mult și activeaz-o. Pentru Apple Music, intră o singură dată în <em>Profil › Muzică › Conectează Apple Music</em> și Aura o preia singură. Poți și căuta o piesă direct în Aura.</p></details>
 <details><summary>De ce nu văd unde e cineva?</summary><p>Distanța și direcția apar doar după ce v-ați salutat amândoi. Până atunci vezi doar „foarte aproape”, „aceeași încăpere” sau „în apropiere”.</p></details>
 <details><summary>Cum mă ascund?</summary><p>Pornește modul fantomă de pe radar. Dispari imediat de pe radarul tuturor, dar poți vorbi în continuare cu persoanele cu care ești deja conectat.</p></details>
