@@ -274,8 +274,7 @@ footer { border-top: 1px solid var(--line); padding: 36px 0 44px; color: var(--m
   .links { display: none; }
   .hero-in, .auras, .privacy, .map-card { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-top: 36px; }
-  .phone-wrap { order: -1; }
-  .phone { transform: none; width: min(300px, 78vw); }
+  .phone { transform: none; width: min(280px, 74vw); }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shield { display: none; }
   .map-card { padding: 28px 22px; }
@@ -290,7 +289,11 @@ footer { border-top: 1px solid var(--line); padding: 36px 0 44px; color: var(--m
   .hero h1 { margin-top: 12px; }
   .cta { padding: 48px 18px; border-radius: 28px; }
   .foot nav { margin-left: 0; }
+  .map .city text { font-size: 24px; }
+  .map .city.capital text { font-size: 26px; }
+  .map .city:not(.capital):not(.big) text { display: none; }
 }
-@media (max-width: 380px) {
+@media (max-width: 360px) {
   .brand span { display: none; }
+  .seg button { padding: 8px 8px; }
 }

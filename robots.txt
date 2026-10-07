@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anghelcc.github.io/sitemap.xml
