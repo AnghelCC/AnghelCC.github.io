@@ -37,7 +37,8 @@
   document.documentElement.lang = lang;
 </script>
 <link rel="stylesheet" href="assets/fonts.css?v=2">
-<link rel="stylesheet" href="assets/site.css?v=2">
+<link rel="stylesheet" href="assets/site.css?v=4">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 </head>
 <body>
 <a class="skip" href="#main"><span data-en>Skip to content</span><span data-ro>Sari la conținut</span></a>
@@ -146,6 +147,27 @@
           <div class="app-row" style="--c:var(--lofi);--f:#2f6aa8;animation-delay:1.45s"><div class="av">M</div><div><b>Maria, 21</b><small>Aruarian Dance · Nujabes</small></div><span class="score">74%</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRY IT (3D) ================= -->
+<section id="try">
+  <div class="wrap">
+    <div class="head center">
+      <p class="kicker reveal"><span data-en>Try it</span><span data-ro>Încearcă</span></p>
+      <h2 class="title reveal"><span data-en>Take Aura for a spin.</span><span data-ro>Ia Aura la o tură.</span></h2>
+      <p class="intro reveal"><span data-en>Tap someone on the radar to see their song, then wave. Tap Dating or Vibe on the screen and the whole page changes colour.</span><span data-ro>Atinge pe cineva pe radar ca să-i vezi piesa, apoi salută. Atinge Dating sau Vibe pe ecran și toată pagina își schimbă culoarea.</span></p>
+    </div>
+    <div class="stage reveal">
+      <div id="phone3d" tabindex="0" role="img" aria-roledescription="3D" aria-label="Aura on an iPhone 15 Pro Max: a radar with five people glowing in the colours of their music. Use the arrow keys to pick someone, Enter to wave, M to switch Dating and Vibe.">
+        <div class="stage-wait" aria-hidden="true"><i></i></div>
+      </div>
+      <p class="hints" aria-hidden="true">
+        <span class="pill"><span data-en>Drag to turn</span><span data-ro>Trage ca să rotești</span></span>
+        <span class="pill"><span data-en>Tap people</span><span data-ro>Atinge oamenii</span></span>
+        <span class="pill"><span data-en>Wave</span><span data-ro>Salută</span></span>
+      </p>
     </div>
   </div>
 </section>
@@ -387,5 +409,6 @@
 </footer>
 
 <script src="assets/site.js?v=2" defer></script>
+<script src="assets/phone3d.js?v=3" type="module"></script>
 </body>
 </html>
