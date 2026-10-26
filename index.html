@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ro" data-mode="dating">
+<html lang="ro" data-mode="vibing">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Aura · Vezi muzica din cameră</title>
-<meta name="description" content="Aura îți arată oamenii din aceeași cameră după muzica pe care o ascultă. Salută, vorbiți, deveniți prieteni. Dating și Vibe. Fără reclame, fără urmărire.">
-<meta name="theme-color" content="#1a0b13">
+<meta name="description" content="Aura îți arată oamenii din aceeași cameră după muzica pe care o ascultă. Salută, spune ce ai chef să faci, vorbiți, deveniți prieteni. Fără reclame, fără urmărire.">
+<meta name="theme-color" content="#0a1226">
 <link rel="canonical" href="https://anghelcc.github.io/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Aura">
 <meta property="og:title" content="Aura · See the music in the room">
-<meta property="og:description" content="See who's in the same room as you by the music they listen to. Wave, chat, become friends.">
+<meta property="og:description" content="See who's in the same room as you by the music they listen to. Wave, say what you're up for, chat, become friends.">
 <meta property="og:url" content="https://anghelcc.github.io/">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:locale:alternate" content="en_GB">
@@ -31,8 +31,6 @@
   try {
     var saved = localStorage.getItem('aura-lang') || localStorage.getItem('aura-legal-lang');
     if (saved === 'ro' || saved === 'en') lang = saved;
-    var m = localStorage.getItem('aura-site-mode');
-    if (m === 'vibing' || m === 'dating') document.documentElement.dataset.mode = m;
   } catch (e) {}
   document.documentElement.lang = lang;
 </script>
@@ -72,15 +70,10 @@
     <nav class="links" aria-label="Sections">
       <a href="#how"><span data-en>How it works</span><span data-ro>Cum funcționează</span></a>
       <a href="#features"><span data-en>Features</span><span data-ro>Funcții</span></a>
-      <a href="#modes"><span data-en>Modes</span><span data-ro>Moduri</span></a>
+      <a href="#upfor"><span data-en>Up for</span><span data-ro>Chef de</span></a>
       <a href="#privacy"><span data-en>Privacy</span><span data-ro>Confidențialitate</span></a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="seg mode-seg" role="group" aria-label="Dating or Vibe colours" data-seg="mode">
-      <span class="knob" aria-hidden="true"></span>
-      <button type="button" data-value="dating" aria-pressed="true">Dating</button>
-      <button type="button" data-value="vibing" aria-pressed="false">Vibe</button>
-    </div>
     <div class="seg lang" role="group" aria-label="Language" data-seg="lang">
       <span class="knob" aria-hidden="true"></span>
       <button type="button" data-value="ro" aria-pressed="true">RO</button>
@@ -124,7 +117,7 @@
           <div class="wave-toast"><svg width="14" height="14"><use href="#i-hand"/></svg><span data-en>Ana waved at you.</span><span data-ro>Ana te-a salutat.</span></div>
           <div class="app-top">
             <div class="app-logo"><i class="dot"></i>aura</div>
-            <div class="app-seg"><span class="d">Dating</span><span class="v">Vibe</span></div>
+            <div class="app-seg"><span class="v"><span data-en>☕ Coffee</span><span data-ro>☕ O cafea</span></span></div>
           </div>
           <div class="app-pill"><i></i><span data-en>Visible now</span><span data-ro>Vizibil acum</span></div>
           <div class="radar">
@@ -157,10 +150,10 @@
     <div class="head center">
       <p class="kicker reveal"><span data-en>Try it</span><span data-ro>Încearcă</span></p>
       <h2 class="title reveal"><span data-en>Take Aura for a spin.</span><span data-ro>Ia Aura la o tură.</span></h2>
-      <p class="intro reveal"><span data-en>Tap someone on the radar to see their song, then wave. Tap Dating or Vibe on the screen and the whole page changes colour.</span><span data-ro>Atinge pe cineva pe radar ca să-i vezi piesa, apoi salută. Atinge Dating sau Vibe pe ecran și toată pagina își schimbă culoarea.</span></p>
+      <p class="intro reveal"><span data-en>Tap someone on the radar to see their song, then wave.</span><span data-ro>Atinge pe cineva pe radar ca să-i vezi piesa, apoi salută.</span></p>
     </div>
     <div class="stage reveal">
-      <div id="phone3d" tabindex="0" role="img" aria-roledescription="3D" aria-label="Aura on an iPhone 15 Pro Max: a radar with five people glowing in the colours of their music. Use the arrow keys to pick someone, Enter to wave, M to switch Dating and Vibe.">
+      <div id="phone3d" tabindex="0" role="img" aria-roledescription="3D" aria-label="Aura on an iPhone 15 Pro Max: a radar with five people glowing in the colours of their music. Use the arrow keys to pick someone, Enter to wave.">
         <div class="stage-wait" aria-hidden="true"><i></i></div>
       </div>
       <p class="hints" aria-hidden="true">
@@ -263,37 +256,23 @@
   </div>
 </section>
 
-<!-- ================= MODES ================= -->
-<section id="modes">
+<!-- ================= UP FOR ================= -->
+<section id="upfor">
   <div class="wrap">
     <div class="head center">
-      <p class="kicker reveal"><span data-en>Two modes</span><span data-ro>Două moduri</span></p>
-      <h2 class="title reveal"><span data-en>Looking for love, or just the vibe?</span><span data-ro>Cauți dragostea sau doar o atmosferă bună?</span></h2>
-      <p class="intro reveal"><span data-en>Switch any time. The whole app changes colour with you. Try it on this page.</span><span data-ro>Schimbi modul oricând, iar aplicația își schimbă culoarea odată cu tine. Încearcă chiar pe pagina asta.</span></p>
+      <p class="kicker reveal"><span data-en>Up for…</span><span data-ro>Am chef de…</span></p>
+      <h2 class="title reveal"><span data-en>Say what you're up for.</span><span data-ro>Spune ce ai chef să faci.</span></h2>
+      <p class="intro reveal"><span data-en>One tap shows the room what you'd like to do. Whoever's in taps "I'm in", and you can chat. It disappears by itself after 3 hours.</span><span data-ro>O atingere și cei din cameră văd ce ai chef să faci. Cine vrea să vină apasă „Vin și eu” și puteți vorbi. Dispare singur după 3 ore.</span></p>
     </div>
-    <div class="modes">
-      <article class="mode dating reveal">
-        <span class="tag">Dating</span>
-        <h3><span data-en>Rose, for dating.</span><span data-ro>Roz, pentru dating.</span></h3>
-        <p><span data-en>See only people who fit what you're looking for, and who are looking for someone like you.</span><span data-ro>Vezi doar oamenii care se potrivesc cu ce cauți și care caută pe cineva ca tine.</span></p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Filters that work both ways: gender and age</span><span data-ro>Filtre în ambele sensuri: gen și vârstă</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>A music match score for everyone around</span><span data-ro>Un procent de potrivire muzicală pentru fiecare</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Hearts when you match</span><span data-ro>Inimioare când vă potriviți</span></li>
-        </ul>
-        <button class="btn small" type="button" data-set-mode="dating"><span data-en>See it in rose</span><span data-ro>Vezi în roz</span></button>
-      </article>
-      <article class="mode vibing reveal" style="--d:.1s">
-        <span class="tag">Vibe</span>
-        <h3><span data-en>Electric blue, for the vibe.</span><span data-ro>Albastru electric, pentru atmosferă bună.</span></h3>
-        <p><span data-en>See everyone who just wants to meet people and discover new music. No filters, no pressure.</span><span data-ro>Vezi pe toți cei care vor doar să cunoască oameni noi și muzică nouă. Fără filtre, fără presiune.</span></p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Everyone in Vibe mode in the room</span><span data-ro>Toți cei din cameră în modul Vibe</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Swap songs, make friends</span><span data-ro>Vă trimiteți piese și vă faceți prieteni</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-en>Music notes when you connect</span><span data-ro>Note muzicale când vă conectați</span></li>
-        </ul>
-        <button class="btn small" type="button" data-set-mode="vibing"><span data-en>See it in blue</span><span data-ro>Vezi în albastru</span></button>
-      </article>
+    <div class="chips upfor">
+      <div class="chip reveal" style="--d:0.00s"><span class="emo" aria-hidden="true">☕</span><b><span data-en>Coffee</span><span data-ro>O cafea</span></b></div>
+      <div class="chip reveal" style="--d:0.04s"><span class="emo" aria-hidden="true">🎬</span><b><span data-en>A movie</span><span data-ro>Un film</span></b></div>
+      <div class="chip reveal" style="--d:0.08s"><span class="emo" aria-hidden="true">🍹</span><b><span data-en>Drinks</span><span data-ro>Ceva de băut</span></b></div>
+      <div class="chip reveal" style="--d:0.12s"><span class="emo" aria-hidden="true">🏃</span><b><span data-en>A run, sport</span><span data-ro>Alergat, sport</span></b></div>
+      <div class="chip reveal" style="--d:0.16s"><span class="emo" aria-hidden="true">📚</span><b><span data-en>Studying</span><span data-ro>Învățat</span></b></div>
+      <div class="chip reveal" style="--d:0.20s"><span class="emo" aria-hidden="true">🎮</span><b><span data-en>Gaming</span><span data-ro>Jocuri</span></b></div>
+      <div class="chip reveal" style="--d:0.24s"><span class="emo" aria-hidden="true">🎤</span><b><span data-en>A concert</span><span data-ro>Un concert</span></b></div>
+      <div class="chip reveal" style="--d:0.28s"><span class="emo" aria-hidden="true">💬</span><b><span data-en>Just chatting</span><span data-ro>O vorbă</span></b></div>
     </div>
   </div>
 </section>
@@ -359,7 +338,7 @@
     </div>
     <div class="faq">
       <details class="reveal"><summary><span data-en>Who can see me on Aura?</span><span data-ro>Cine mă poate vedea pe Aura?</span></summary>
-        <p><span data-en>Only people in the same room whose phones hear yours over Bluetooth, and only while you have Aura open on your screen. In Dating mode, only people who fit your filters (and whose filters you fit). Ghost mode or "Leave the room" hides you.</span><span data-ro>Doar oamenii din aceeași cameră ale căror telefoane îl aud pe al tău prin Bluetooth, și doar cât timp ai Aura deschisă pe ecran. În modul Dating, doar cei care se potrivesc filtrelor tale (și ale căror filtre ți se potrivesc). Modul Fantomă sau „Ieși din cameră” te ascunde.</span></p></details>
+        <p><span data-en>Only people in the same room whose phones hear yours over Bluetooth, and only while you have Aura open on your screen. Ghost mode or "Leave the room" hides you.</span><span data-ro>Doar oamenii din aceeași cameră ale căror telefoane îl aud pe al tău prin Bluetooth, și doar cât timp ai Aura deschisă pe ecran. Modul Fantomă sau „Ieși din cameră” te ascunde.</span></p></details>
       <details class="reveal"><summary><span data-en>Can someone find out where I am?</span><span data-ro>Poate afla cineva unde sunt?</span></summary>
         <p><span data-en>No. Your exact position is never shown to anyone. After you've both waved, the other person sees a rough distance (like "2–5 m"), and outdoors a rough direction. Aura also ignores faked locations.</span><span data-ro>Nu. Poziția ta exactă nu e arătată nimănui. După ce v-ați salutat amândoi, celălalt vede o distanță aproximativă (de exemplu „2–5 m”) și, afară, o direcție aproximativă. Aura ignoră și locațiile false.</span></p></details>
       <details class="reveal"><summary><span data-en>Do I need Bluetooth?</span><span data-ro>Am nevoie de Bluetooth?</span></summary>
