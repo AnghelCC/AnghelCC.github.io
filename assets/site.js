@@ -1,16 +1,16 @@
-// Aura website: Dating/Vibe colours, RO/EN, and sections that slide in as you scroll.
+// Aura website: RO/EN, and sections that slide in as you scroll.
 (function () {
   var root = document.documentElement;
 
   var TEXT = {
     ro: {
       title: 'Aura · Vezi muzica din cameră',
-      description: 'Aura îți arată oamenii din aceeași cameră după muzica pe care o ascultă. Salută, vorbiți, deveniți prieteni. Dating și Vibe. Fără reclame, fără urmărire.',
+      description: 'Aura îți arată oamenii din aceeași cameră după muzica pe care o ascultă. Salută, spune ce ai chef să faci, vorbiți, deveniți prieteni. Fără reclame, fără urmărire.',
       mail: 'Aura – acces timpuriu',
     },
     en: {
       title: 'Aura · See the music in the room',
-      description: "See who's in the same room as you by the music they listen to. Wave, chat, become friends. Dating and Vibe. No ads, no tracking.",
+      description: "See who's in the same room as you by the music they listen to. Wave, say what you're up for, chat, become friends. No ads, no tracking.",
       mail: 'Aura early access',
     },
   };
@@ -74,7 +74,7 @@
     });
   });
 
-  setMode(root.dataset.mode === 'vibing' ? 'vibing' : 'dating');
+  setMode('vibing'); // one look now (Dating mode is gone)
   setLang(root.lang === 'en' ? 'en' : 'ro');
   // Fonts change the button widths once they arrive.
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {

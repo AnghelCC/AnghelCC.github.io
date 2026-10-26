@@ -1,5 +1,5 @@
 // Aura website: an iPhone 15 Pro Max in 3D, running Aura's radar. Drag to turn it, tap people on the
-// screen, wave, and switch Dating/Vibe. Three.js loads only when this section comes into view.
+// screen, wave, and see what people are up for. Three.js loads only when this section comes into view.
 // Without WebGL (or if Three.js can't load), the same live screen is shown flat.
 const THREE_URL = 'https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js';
 
@@ -26,19 +26,25 @@ function start() {
     en: { indie: 'Indie', electronic: 'Electronic', pop: 'Pop', rock: 'Rock', jazz: 'Jazz' },
   };
   const T = {
-    ro: { sub: 'Atinge pe cineva ca să-i vezi piesa', here: '5 persoane în cameră', live: 'Bluetooth · activ',
-      playing: (n) => `${n.toUpperCase()} ASCULTĂ`, wave: 'Salută', waved: 'Ai salutat', chat: 'Scrie-i',
+    ro: { up: '☕ O cafea', sub: 'Atinge pe cineva ca să-i vezi piesa', here: '5 persoane în cameră', live: 'Bluetooth · activ',
+      playing: (n) => `${n.toUpperCase()} ASCULTĂ`, wave: 'Salută', imIn: 'Vin și eu', waved: 'Ai salutat', chat: 'Scrie-i',
       back: (n) => `${n} ți-a răspuns la salut!`, tabs: ['Radar', 'Mesaje', 'Profil'], you: 'Tu' },
-    en: { sub: 'Tap someone to see their song', here: '5 people in the room', live: 'Bluetooth · live',
-      playing: (n) => `${n.toUpperCase()} IS PLAYING`, wave: 'Wave', waved: 'Waved', chat: 'Chat',
+    en: { up: '☕ Coffee', sub: 'Tap someone to see their song', here: '5 people in the room', live: 'Bluetooth · live',
+      playing: (n) => `${n.toUpperCase()} IS PLAYING`, wave: 'Wave', imIn: "I'm in", waved: 'Waved', chat: 'Chat',
       back: (n) => `${n} waved back!`, tabs: ['Radar', 'Chats', 'Profile'], you: 'You' },
+  };
+  // What people are up for, as in the app ("Up for…").
+  const ACT = {
+    concert: { e: '🎤', ro: 'Un concert', en: 'A concert' },
+    movie: { e: '🎬', ro: 'Un film', en: 'A movie' },
+    sport: { e: '🏃', ro: 'Alergat, sport', en: 'A run, sport' },
   };
   const people = [
     { n: 'Ioana', age: 24, g: 'indie', a: -0.9, r: 0.42, song: 'Motion Sickness', artist: 'Phoebe Bridgers', d: '2–5 m' },
-    { n: 'Vlad', age: 27, g: 'electronic', a: 0.5, r: 0.78, song: 'Delilah', artist: 'Fred again..', d: '5–10 m' },
-    { n: 'Maria', age: 23, g: 'pop', a: 2.2, r: 0.55, song: 'Houdini', artist: 'Dua Lipa', d: '1–2 m' },
+    { n: 'Vlad', age: 27, g: 'electronic', a: 0.5, r: 0.78, song: 'Delilah', artist: 'Fred again..', d: '5–10 m', act: 'concert' },
+    { n: 'Maria', age: 23, g: 'pop', a: 2.2, r: 0.55, song: 'Houdini', artist: 'Dua Lipa', d: '1–2 m', act: 'movie' },
     { n: 'Andrei', age: 26, g: 'rock', a: 3.4, r: 0.82, song: 'Do I Wanna Know?', artist: 'Arctic Monkeys', d: '5–10 m' },
-    { n: 'Sara', age: 25, g: 'jazz', a: 4.6, r: 0.66, song: 'Feeling Good', artist: 'Nina Simone', d: '2–5 m' },
+    { n: 'Sara', age: 25, g: 'jazz', a: 4.6, r: 0.66, song: 'Feeling Good', artist: 'Nina Simone', d: '2–5 m', act: 'sport' },
   ];
   const DISPLAY = '"Bricolage Grotesque", system-ui, sans-serif';
   const BODY = '"Atkinson Hyperlegible", system-ui, sans-serif';
@@ -49,7 +55,7 @@ function start() {
     return `rgba(${A.map((v, i) => Math.round(v + (B[i] - v) * k)).join(',')},${al})`;
   };
 
-  let k = root.dataset.mode === 'vibing' ? 1 : 0; // 0 = Dating, 1 = Vibe (eased)
+  const k = 1; // the app's blue (the brand pink is PAL.dating, used only at sign-in)
   let sel = 0;              // the person shown in the cards
   const waved = new Set();  // who you waved at
   let toast = null;         // { text, t0 }
@@ -59,20 +65,10 @@ function start() {
   const seg = { x: CW - 44 - 260, y: 158, w: 260, h: 66 };
   const waveBtn = { x: CW - 70 - 150, y: 1202, w: 150, h: 56 };
   const lang = () => (root.lang === 'en' ? 'en' : 'ro');
-  const target = () => (root.dataset.mode === 'vibing' ? 1 : 0);
 
   function rr(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); }
-  function heart(x, y, s) {
-    ctx.beginPath(); ctx.moveTo(x, y + s * 0.3);
-    ctx.bezierCurveTo(x, y, x - s * 0.5, y, x - s * 0.5, y + s * 0.3);
-    ctx.bezierCurveTo(x - s * 0.5, y + s * 0.6, x, y + s * 0.8, x, y + s);
-    ctx.bezierCurveTo(x, y + s * 0.8, x + s * 0.5, y + s * 0.6, x + s * 0.5, y + s * 0.3);
-    ctx.bezierCurveTo(x + s * 0.5, y, x, y, x, y + s * 0.3); ctx.fill();
-  }
-
   function draw(t) {
     const L = T[lang()];
-    k += (target() - k) * (reduce ? 1 : 0.09);
     const C = (key, al) => mix(PAL.dating[key], PAL.vibing[key], k, al ?? 1);
     const spin = reduce ? 0 : t;
     ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
@@ -89,15 +85,13 @@ function start() {
     ctx.fillRect(580, 57, 40, 17); ctx.fillRect(631, 60, 4, 11);
     ctx.fillStyle = '#000'; rr(cx - 118, 28, 236, 72, 36); ctx.fill();
 
-    // header and the Dating / Vibe switch
+    // header and what I'm up for
     ctx.textBaseline = 'alphabetic';
     ctx.fillStyle = C('fg'); ctx.font = `800 62px ${DISPLAY}`; ctx.fillText('aura', 44, 205);
     ctx.fillStyle = C('muted'); ctx.font = `400 25px ${BODY}`; ctx.fillText(L.sub, 46, 250);
-    ctx.fillStyle = C('surface2'); rr(seg.x, seg.y, seg.w, seg.h, 33); ctx.fill();
-    ctx.fillStyle = mix(PAL.dating.accent, PAL.vibing.blush, k); rr(seg.x + 5 + k * 125, seg.y + 5, 125, 56, 28); ctx.fill();
-    ctx.font = `700 25px ${BODY}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillStyle = mix(PAL.dating.accentInk, PAL.vibing.muted, k); ctx.fillText('Dating', seg.x + 67, seg.y + 34);
-    ctx.fillStyle = mix(PAL.dating.muted, PAL.vibing.blushInk, k); ctx.fillText('Vibe', seg.x + 193, seg.y + 34);
+    ctx.fillStyle = C('blush'); rr(seg.x, seg.y, seg.w, seg.h, 33); ctx.fill();
+    ctx.font = `700 26px ${BODY}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillStyle = C('blushInk'); ctx.fillText(L.up, seg.x + seg.w / 2, seg.y + 34);
 
     // radar
     const rg = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
@@ -137,6 +131,12 @@ function start() {
       ctx.fillStyle = C('surface2'); ctx.beginPath(); ctx.arc(x, y, 31, 0, Math.PI * 2); ctx.fill();
       ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.stroke();
       ctx.fillStyle = C('fg'); ctx.font = `800 27px ${DISPLAY}`; ctx.fillText(p.n[0], x, y + 1);
+      // their activity, top right of the bubble
+      if (p.act) {
+        ctx.fillStyle = C('blush'); ctx.beginPath(); ctx.arc(x + 25, y - 25, 17, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = C('bg'); ctx.lineWidth = 4; ctx.stroke();
+        ctx.font = `18px ${BODY}`; ctx.fillText(ACT[p.act].e, x + 25, y - 24);
+      }
       ctx.fillStyle = i === sel ? C('fg') : C('muted'); ctx.font = `700 21px ${BODY}`; ctx.fillText(p.n, x, y + 54);
     });
     ctx.textAlign = 'left';
@@ -173,11 +173,18 @@ function start() {
     ctx.strokeStyle = GEN[p.g]; ctx.lineWidth = 4; ctx.stroke();
     ctx.fillStyle = C('fg'); ctx.font = `800 28px ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText(p.n[0], 110, 1231);
     ctx.textAlign = 'left'; ctx.font = `800 28px ${DISPLAY}`; ctx.fillText(`${p.n}, ${p.age}`, 166, 1215);
-    ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(`${GENRE[lang()][p.g]} · ${p.d}`, 166, 1251);
+    if (p.act) {
+      ctx.fillStyle = C('blush'); ctx.font = `700 23px ${BODY}`;
+      ctx.fillText(`${ACT[p.act].e} ${ACT[p.act][lang()]}`, 166, 1251);
+      const w = ctx.measureText(`${ACT[p.act].e} ${ACT[p.act][lang()]}`).width;
+      ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(` · ${p.d}`, 166 + w, 1251);
+    } else {
+      ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(`${GENRE[lang()][p.g]} · ${p.d}`, 166, 1251);
+    }
     const done = waved.has(sel);
     ctx.fillStyle = done ? C('surface2') : C('accent'); rr(waveBtn.x, waveBtn.y, waveBtn.w, waveBtn.h, 28); ctx.fill();
     ctx.fillStyle = done ? C('muted') : C('accentInk'); ctx.font = `800 24px ${BODY}`; ctx.textAlign = 'center';
-    ctx.fillText(done ? L.chat : L.wave, waveBtn.x + waveBtn.w / 2, waveBtn.y + 29);
+    ctx.fillText(done ? L.chat : p.act ? L.imIn : L.wave, waveBtn.x + waveBtn.w / 2, waveBtn.y + 29);
     ctx.textAlign = 'left';
 
     // tab bar
@@ -209,7 +216,7 @@ function start() {
     ctx.textAlign = 'left';
     ctx.fillStyle = C('fg', 0.85); rr(cx - 115, CH - 30, 230, 10, 5); ctx.fill();
 
-    // hearts (Dating) or music notes (Vibe) when someone waves back
+    // music notes when someone waves back
     if (burst) {
       const e = (t - burst.t0) / 1.6;
       if (e > 1) burst = null;
@@ -217,8 +224,7 @@ function start() {
         const ang = (i / 14) * Math.PI * 2 + i, dist = 40 + e * (120 + (i % 4) * 30);
         const x = burst.x + Math.cos(ang) * dist, y = burst.y + Math.sin(ang) * dist - e * 80;
         ctx.globalAlpha = 1 - e; ctx.fillStyle = i % 2 ? C('accent') : C('blush');
-        if (k < 0.5) heart(x, y - 14, 30);
-        else { ctx.font = `800 40px ${BODY}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(i % 2 ? '♪' : '♫', x, y); }
+        ctx.font = `800 40px ${BODY}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(i % 2 ? '♪' : '♫', x, y);
       }
       ctx.globalAlpha = 1; ctx.textAlign = 'left';
     }
@@ -240,10 +246,6 @@ function start() {
   // ---------- what a tap on the screen does (x, y in screen pixels) ----------
   let now = 0;
   function tap(x, y) {
-    if (y >= seg.y && y <= seg.y + seg.h && x >= seg.x && x <= seg.x + seg.w) {
-      setSiteMode(x < seg.x + seg.w / 2 ? 'dating' : 'vibing');
-      return true;
-    }
     if (x >= waveBtn.x && x <= waveBtn.x + waveBtn.w && y >= waveBtn.y && y <= waveBtn.y + waveBtn.h) { wave(); return true; }
     for (let i = 0; i < spots.length; i++) {
       if (Math.hypot(x - spots[i].x, y - spots[i].y) < 55) { sel = i; return true; }
@@ -260,18 +262,11 @@ function start() {
       burst = { x: s.x, y: s.y, t0: now };
     }, 900);
   }
-  // Uses the page's own Dating/Vibe switch, so the whole website changes colour too.
-  function setSiteMode(m) {
-    const b = document.querySelector(`[data-seg="mode"] button[data-value="${m}"]`);
-    if (b) b.click();
-  }
-
-  // Keyboard: arrows pick a person, Enter or space waves, M switches mode.
+  // Keyboard: arrows pick a person, Enter or space waves.
   box.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') sel = (sel + 1) % people.length;
     else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') sel = (sel + people.length - 1) % people.length;
     else if (e.key === 'Enter' || e.key === ' ') wave();
-    else if (e.key === 'm' || e.key === 'M') setSiteMode(target() ? 'dating' : 'vibing');
     else return;
     e.preventDefault();
   });

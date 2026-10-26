@@ -94,7 +94,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <!-- ================= PRIVACY · EN ================= -->
 <article class="doc" data-doc="privacy" lang="en">
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 7 October 2026</p>
+<p class="meta">Effective 26 October 2026</p>
 <p class="lead">Aura shows you who is nearby and what they are listening to. To do that it has to know roughly where you are and who is in the same room. This page explains exactly what Aura collects, why, who can see it and how long it is kept.</p>
 
 <div class="box">
@@ -117,25 +117,23 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <thead><tr><th>Information</th><th>What it is used for</th><th>Who can see it</th></tr></thead>
 <tbody>
 <tr><td><strong>Sign-in</strong>: your Apple ID, your Google account (name and email) or your email address</td><td>Creating and securing your account</td><td>Only you. With Sign in with Apple you can hide your real email.</td></tr>
-<tr><td><strong>Profile</strong>: first name, date of birth, gender, photo, a short bio</td><td>Showing who you are; confirming you are 18 or older</td><td>People in the same room see your name, age (not your birth date), photo and bio</td></tr>
+<tr><td><strong>Profile</strong>: first name, date of birth, gender (optional), photo, a short bio</td><td>Showing who you are; confirming you are 18 or older</td><td>People in the same room see your name, age (not your birth date), photo, bio and, if you chose one, your gender</td></tr>
+<tr><td><strong>What you're up for</strong>: an activity you pick, such as coffee, a movie or a run</td><td>Letting people in the room know what you'd like to do</td><td>People in the same room, while you have Aura open. It disappears after 3 hours or when you clear it.</td></tr>
 <tr><td><strong>Music</strong>: favourite artists, music styles, the song you are playing, songs you send</td><td>Your aura colour, the match score and "now playing"</td><td>People in the same room and people you are connected with</td></tr>
-<tr><td><strong>Dating preferences</strong>: who you want to see and an age range</td><td>Only in Dating mode, to decide who appears on your radar</td><td>No one. They are never shown on your profile.</td></tr>
 <tr><td><strong>Location</strong>: approximate GPS position and its accuracy, while Aura is open</td><td>Showing the direction to someone after you have both waved, and spotting fake locations. Who is in your room is decided by Bluetooth only.</td><td>No one. It is only used to compare distances.</td></tr>
 <tr><td><strong>Bluetooth</strong>: a random code that changes regularly, and how strongly nearby phones hear it</td><td>Telling "very close", "same room" and "nearby" apart</td><td>No one. The code is not linked to your name for anyone outside Aura's server.</td></tr>
 <tr><td><strong>Interactions</strong>: waves, chat messages, friend requests</td><td>Letting you connect with people</td><td>You and the other person</td></tr>
 <tr><td><strong>Contact details you choose to share</strong>: phone number (for calls, texts or WhatsApp) and Instagram username</td><td>Letting a friend reach you outside Aura</td><td>Only the friend you shared them with</td></tr>
 <tr><td><strong>Safety</strong>: people you block, reports you send or receive</td><td>Keeping Aura safe and enforcing the Terms</td><td>Only the operator of Aura, when reviewing a report</td></tr>
+<tr><td><strong>App errors</strong>: the error message, the app version and whether it is an iPhone or Android, when something breaks in the app</td><td>Finding and fixing problems</td><td>Only the operator of Aura. They are not linked to your name or account.</td></tr>
 <tr><td><strong>Optional connections</strong>: Apple Music access, a Last.fm username</td><td>Reading your top artists and the song you are playing</td><td>Only the results (artists, current song) are shared, as described above</td></tr>
 </tbody></table></div>
 <p>Aura does not collect contacts, photos other than the one you choose, advertising identifiers, or your location while the app is closed. Aura does not use analytics or advertising tools.</p>
 
-<h2>Dating mode</h2>
-<p>Choosing your gender and who you want to see in Dating mode can reveal information about your sexual orientation. Aura uses these settings only to filter your radar and never shows them to anyone. By choosing them you give your explicit consent to this use. You can withdraw it at any time by switching to Vibe mode or changing your preferences in your profile.</p>
-
 <h2>Why we are allowed to use it</h2>
 <ul>
 <li><strong>To provide the service you asked for</strong> (GDPR art. 6(1)(b)): your account, profile, music, being in the room, waves and chats.</li>
-<li><strong>Your consent</strong> (art. 6(1)(a) and art. 9(2)(a)): location and Bluetooth permissions, Apple Music access, Last.fm, and the Dating mode settings. You can withdraw consent in your phone's settings or in Aura.</li>
+<li><strong>Your consent</strong> (art. 6(1)(a)): location and Bluetooth permissions, Apple Music access, Last.fm, and showing your gender if you choose to. You can withdraw consent in your phone's settings or in Aura.</li>
 <li><strong>Legitimate interest in safety</strong> (art. 6(1)(f)): blocks, reports, the 18+ check, and keeping evidence when someone breaks the rules.</li>
 <li><strong>Legal obligations</strong> (art. 6(1)(c)): answering valid requests from authorities.</li>
 </ul>
@@ -148,12 +146,15 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <li><strong>Contact details you shared</strong>: kept until you stop sharing them, the friendship ends, either of you blocks the other, or an account is deleted. Your details are not stored anywhere else on the server.</li>
 <li><strong>Profile, photo and music</strong>: kept until you change them or delete your account. When you change your photo, the old one is deleted.</li>
 <li><strong>Blocks and reports</strong>: kept until either account is deleted.</li>
-<li><strong>Deleted accounts</strong>: removed immediately from the live database. Encrypted backups kept by our hosting provider roll over within a few days.</li>
+<li><strong>App errors</strong>: deleted after 30 days.</li>
+<li><strong>Dating preferences</strong> (from earlier versions of Aura, which had a Dating mode): deleted when Aura moved to one mode for everyone, and no longer collected.</li>
+<li><strong>Deleted accounts</strong>: removed immediately from the live database. Encrypted backups, kept by our hosting provider and on GitHub, roll over within a few days (GitHub keeps each one for 3 days).</li>
 </ul>
 
 <h2>Who processes it for us</h2>
 <ul>
 <li><strong>Supabase</strong> hosts Aura's database, sign-in and photos in the European Union (Frankfurt, Germany).</li>
+<li><strong>GitHub</strong> (Microsoft) stores a nightly backup of the database, encrypted with a key only Aura's operator has, so GitHub cannot read it. Each backup is deleted after 3 days.</li>
 <li><strong>Google</strong> handles Sign in with Google, if you choose it. Aura receives only your name and email address.</li>
 <li><strong>Apple</strong> handles Sign in with Apple and Apple Music access. When you search for a song or artist, your search words are sent to Apple's public music catalog. No account details are sent.</li>
 <li><strong>Spotify, YouTube or Apple Music</strong>: when you share a song link to Aura, Aura opens that public link to read the song title and artist.</li>
@@ -178,7 +179,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <!-- ================= PRIVACY · RO ================= -->
 <article class="doc" data-doc="privacy" lang="ro">
 <h1>Politica de confidențialitate</h1>
-<p class="meta">În vigoare din 7 octombrie 2026</p>
+<p class="meta">În vigoare din 26 octombrie 2026</p>
 <p class="lead">Aura îți arată cine e în apropiere și ce ascultă. Pentru asta trebuie să știe aproximativ unde ești și cine e în aceeași încăpere. Aici afli exact ce colectează Aura, de ce, cine vede și cât timp păstrăm.</p>
 
 <div class="box">
@@ -201,25 +202,23 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <thead><tr><th>Informația</th><th>La ce folosește</th><th>Cine o vede</th></tr></thead>
 <tbody>
 <tr><td><strong>Autentificare</strong>: Apple ID, contul Google (nume și email) sau adresa de email</td><td>Crearea și protejarea contului</td><td>Doar tu. Cu Sign in with Apple îți poți ascunde emailul real.</td></tr>
-<tr><td><strong>Profil</strong>: prenume, data nașterii, gen, poză, o scurtă descriere</td><td>Să arate cine ești; verificarea vârstei de 18+</td><td>Cei din aceeași încăpere văd numele, vârsta (nu data nașterii), poza și descrierea</td></tr>
+<tr><td><strong>Profil</strong>: prenume, data nașterii, gen (opțional), poză, o scurtă descriere</td><td>Să arate cine ești; verificarea vârstei de 18+</td><td>Cei din aceeași încăpere văd numele, vârsta (nu data nașterii), poza, descrierea și, dacă l-ai ales, genul</td></tr>
+<tr><td><strong>Ce ai chef să faci</strong>: o activitate aleasă de tine, de exemplu o cafea, un film sau alergat</td><td>Ca cei din cameră să știe ce ai vrea să faci</td><td>Cei din aceeași încăpere, cât timp ai Aura deschisă. Dispare după 3 ore sau când o scoți.</td></tr>
 <tr><td><strong>Muzică</strong>: artiști preferați, stiluri, piesa pe care o asculți, piesele trimise</td><td>Culoarea aurei, scorul de potrivire și „ascultă acum”</td><td>Cei din aceeași încăpere și persoanele cu care ești conectat</td></tr>
-<tr><td><strong>Preferințe de dating</strong>: pe cine vrei să vezi și un interval de vârstă</td><td>Doar în modul Dating, ca să aleagă cine apare pe radar</td><td>Nimeni. Nu apar niciodată pe profil.</td></tr>
 <tr><td><strong>Locație</strong>: poziție GPS aproximativă și precizia ei, cât timp Aura e deschisă</td><td>Arătarea direcției către cineva după ce v-ați salutat amândoi și depistarea locațiilor false. Cine e în încăpere decide doar Bluetooth.</td><td>Nimeni. E folosită doar pentru a compara distanțe.</td></tr>
 <tr><td><strong>Bluetooth</strong>: un cod aleatoriu care se schimbă des și cât de puternic îl aud telefoanele din jur</td><td>Diferența între „foarte aproape”, „aceeași încăpere” și „în apropiere”</td><td>Nimeni. Codul nu e legat de numele tău în afara serverului Aura.</td></tr>
 <tr><td><strong>Interacțiuni</strong>: saluturi, mesaje, cereri de prietenie</td><td>Să te poți conecta cu alții</td><td>Tu și cealaltă persoană</td></tr>
 <tr><td><strong>Date de contact pe care alegi să le dai</strong>: număr de telefon (pentru apeluri, SMS sau WhatsApp) și numele de Instagram</td><td>Ca un prieten să te poată contacta în afara Aura</td><td>Doar prietenul căruia i le-ai dat</td></tr>
 <tr><td><strong>Siguranță</strong>: persoane blocate, raportări trimise sau primite</td><td>Siguranța în Aura și respectarea Termenilor</td><td>Doar administratorul Aura, când analizează o raportare</td></tr>
+<tr><td><strong>Erori ale aplicației</strong>: mesajul erorii, versiunea aplicației și dacă e iPhone sau Android, când ceva nu merge în aplicație</td><td>Găsirea și repararea problemelor</td><td>Doar administratorul Aura. Nu sunt legate de numele sau contul tău.</td></tr>
 <tr><td><strong>Conexiuni opționale</strong>: acces Apple Music, nume de utilizator Last.fm</td><td>Citirea artiștilor preferați și a piesei curente</td><td>Doar rezultatul (artiști, piesa curentă), ca mai sus</td></tr>
 </tbody></table></div>
 <p>Aura nu colectează contacte, alte poze în afară de cea aleasă de tine, identificatori de publicitate sau locația ta când aplicația e închisă. Aura nu folosește instrumente de analiză sau publicitate.</p>
 
-<h2>Modul Dating</h2>
-<p>Alegerea genului tău și a persoanelor pe care vrei să le vezi în modul Dating poate dezvălui informații despre orientarea ta sexuală. Aura folosește aceste setări doar pentru a filtra radarul și nu le arată nimănui. Alegându-le, îți dai consimțământul explicit pentru această folosire. Îl poți retrage oricând trecând în modul Vibe sau schimbând preferințele din profil.</p>
-
 <h2>Temeiul legal</h2>
 <ul>
 <li><strong>Furnizarea serviciului cerut</strong> (GDPR art. 6 alin. 1 lit. b): cont, profil, muzică, prezența în încăpere, saluturi și conversații.</li>
-<li><strong>Consimțământul tău</strong> (art. 6 alin. 1 lit. a și art. 9 alin. 2 lit. a): permisiunile de locație și Bluetooth, Apple Music, Last.fm și setările modului Dating. Îl poți retrage din setările telefonului sau din Aura.</li>
+<li><strong>Consimțământul tău</strong> (art. 6 alin. 1 lit. a): permisiunile de locație și Bluetooth, Apple Music, Last.fm și afișarea genului, dacă alegi asta. Îl poți retrage din setările telefonului sau din Aura.</li>
 <li><strong>Interesul legitim privind siguranța</strong> (art. 6 alin. 1 lit. f): blocări, raportări, verificarea vârstei și păstrarea dovezilor când cineva încalcă regulile.</li>
 <li><strong>Obligații legale</strong> (art. 6 alin. 1 lit. c): răspunsuri la cereri valide ale autorităților.</li>
 </ul>
@@ -232,12 +231,15 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <li><strong>Datele de contact date unui prieten</strong>: rămân până nu le mai arăți, se încheie prietenia, unul dintre voi îl blochează pe celălalt sau se șterge un cont. Nu sunt păstrate în altă parte pe server.</li>
 <li><strong>Profil, poză și muzică</strong>: rămân până le schimbi sau îți ștergi contul. Când îți schimbi poza, cea veche se șterge.</li>
 <li><strong>Blocări și raportări</strong>: rămân până la ștergerea unuia dintre conturi.</li>
-<li><strong>Conturi șterse</strong>: dispar imediat din baza de date activă. Copiile de siguranță criptate ale furnizorului de găzduire se înlocuiesc în câteva zile.</li>
+<li><strong>Erori ale aplicației</strong>: se șterg după 30 de zile.</li>
+<li><strong>Preferințele de dating</strong> (din versiunile mai vechi ale Aura, care aveau modul Dating): șterse când Aura a trecut la un singur mod pentru toți și nu se mai colectează.</li>
+<li><strong>Conturi șterse</strong>: dispar imediat din baza de date activă. Copiile de siguranță criptate, păstrate de furnizorul de găzduire și pe GitHub, se înlocuiesc în câteva zile (GitHub păstrează fiecare copie 3 zile).</li>
 </ul>
 
 <h2>Cine prelucrează datele pentru noi</h2>
 <ul>
 <li><strong>Supabase</strong> găzduiește baza de date, autentificarea și pozele Aura în Uniunea Europeană (Frankfurt, Germania).</li>
+<li><strong>GitHub</strong> (Microsoft) păstrează în fiecare noapte o copie de siguranță a bazei de date, criptată cu o cheie pe care o are doar administratorul Aura, deci GitHub nu o poate citi. Fiecare copie se șterge după 3 zile.</li>
 <li><strong>Google</strong> se ocupă de autentificarea cu Google, dacă o alegi. Aura primește doar numele și adresa de email.</li>
 <li><strong>Apple</strong> se ocupă de Sign in with Apple și de accesul Apple Music. Când cauți o piesă sau un artist, cuvintele căutate sunt trimise catalogului muzical public Apple, fără date despre cont.</li>
 <li><strong>Spotify, YouTube sau Apple Music</strong>: când trimiți un link de piesă către Aura, Aura deschide acel link public ca să citească titlul și artistul.</li>
@@ -371,7 +373,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <p class="meta" style="margin-top:.8em">For a problem with a person, use <strong>Report</strong> on their profile in the app first. It reaches us faster and includes the details we need.</p>
 
 <h2>Common questions</h2>
-<details><summary>Nobody appears on my radar</summary><p>Everyone must have Aura open on screen. Check that Bluetooth and Location are on and allowed for Aura in Settings. In Dating mode, your gender and age filters must fit both ways; switch to Vibe to see everyone.</p></details>
+<details><summary>Nobody appears on my radar</summary><p>Everyone must have Aura open on screen. Check that Bluetooth and Location are on and allowed for Aura in Settings.</p></details>
 <details><summary>How do I show the song I'm playing?</summary><p>On Spotify or YouTube Music, open the song, tap Share and choose Aura. If Aura isn't in the list, tap More and switch it on. On Apple Music, go to <em>Profile › Music › Connect Apple Music</em> once and Aura picks it up by itself. You can also search for a song in Aura.</p></details>
 <details><summary>Why can't I see where someone is?</summary><p>Distance and direction appear only after you have both waved. Until then you only see "very close", "same room" or "nearby".</p></details>
 <details><summary>How do I hide?</summary><p>Turn on ghost mode on the radar. You disappear from everyone's radar straight away but can still chat with people you are already connected with.</p></details>
@@ -392,7 +394,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);marg
 <p class="meta" style="margin-top:.8em">Pentru o problemă cu o persoană, folosește mai întâi <strong>Raportează</strong> pe profilul ei din aplicație. Ajunge mai repede la noi și conține detaliile necesare.</p>
 
 <h2>Întrebări frecvente</h2>
-<details><summary>Nu apare nimeni pe radar</summary><p>Toată lumea trebuie să aibă Aura deschisă pe ecran. Verifică dacă Bluetooth și Locația sunt pornite și permise pentru Aura în Setări. În modul Dating, filtrele de gen și vârstă trebuie să se potrivească în ambele sensuri; treci pe Vibe ca să vezi pe toată lumea.</p></details>
+<details><summary>Nu apare nimeni pe radar</summary><p>Toată lumea trebuie să aibă Aura deschisă pe ecran. Verifică dacă Bluetooth și Locația sunt pornite și permise pentru Aura în Setări.</p></details>
 <details><summary>Cum arăt piesa pe care o ascult?</summary><p>În Spotify sau YouTube Music, deschide piesa, apasă Distribuie și alege Aura. Dacă Aura nu e în listă, apasă Mai mult și activeaz-o. Pentru Apple Music, intră o singură dată în <em>Profil › Muzică › Conectează Apple Music</em> și Aura o preia singură. Poți și căuta o piesă direct în Aura.</p></details>
 <details><summary>De ce nu văd unde e cineva?</summary><p>Distanța și direcția apar doar după ce v-ați salutat amândoi. Până atunci vezi doar „foarte aproape”, „aceeași încăpere” sau „în apropiere”.</p></details>
 <details><summary>Cum mă ascund?</summary><p>Pornește modul fantomă de pe radar. Dispari imediat de pe radarul tuturor, dar poți vorbi în continuare cu persoanele cu care ești deja conectat.</p></details>

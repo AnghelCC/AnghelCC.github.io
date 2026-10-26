@@ -1,5 +1,5 @@
-/* Aura website. Colours are the app's own (see DESIGN.md): Dating (rose) and Vibe (electric blue).
-   The page switches between them with <html data-mode="dating|vibing">. Dark only, like the app. */
+/* Aura website. Colours are the app's own (see DESIGN.md): the app's electric blue (data-mode="vibing"),
+   and Aura's brand rose (the default, used by the 404 page). Dark only, like the app. */
 :root,
 :root[data-mode="dating"] {
   --bg: #1a0b13; --surface: #26111d; --surface2: #341827; --line: #4a2338;
@@ -65,8 +65,6 @@ html[lang="ro"] [data-en], html[lang="en"] [data-ro] { display: none !important;
 .seg button { position: relative; z-index: 1; border: 0; background: none; color: var(--muted); font: 700 .85rem/1 var(--body); padding: 9px 13px; min-height: 36px; border-radius: 999px; cursor: pointer; transition: color .35s ease; }
 .seg button[aria-pressed="true"] { color: var(--accent-ink); }
 .seg .knob { position: absolute; top: 3px; bottom: 3px; left: 3px; border-radius: 999px; background: var(--accent); transition: transform .45s cubic-bezier(.3, 1.4, .5, 1), width .45s ease, background-color .6s ease; }
-:root[data-mode="vibing"] .seg.mode-seg .knob { background: var(--blush); }
-:root[data-mode="vibing"] .seg.mode-seg button[aria-pressed="true"] { color: var(--blush-ink); }
 .lang button { padding-inline: 10px; letter-spacing: .05em; }
 .lang .knob { background: var(--fg); }
 .lang button[aria-pressed="true"] { color: var(--bg); }
@@ -112,8 +110,8 @@ html[lang="ro"] [data-en], html[lang="en"] [data-ro] { display: none !important;
 .app-logo .dot { width: 9px; height: 9px; }
 .app-seg { display: flex; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 2px; font-size: .62rem; font-weight: 700; }
 .app-seg span { padding: 5px 9px; border-radius: 999px; color: var(--muted); transition: background-color .45s ease, color .45s ease; }
-:root[data-mode="dating"] .app-seg .d, :root:not([data-mode]) .app-seg .d { background: var(--accent); color: var(--accent-ink); }
 :root[data-mode="vibing"] .app-seg .v { background: var(--blush); color: var(--blush-ink); }
+.app-seg .v span { padding: 0; color: inherit; }
 .app-pill { align-self: flex-start; display: flex; align-items: center; gap: 5px; font-size: .6rem; font-weight: 700; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; }
 .app-pill i { width: 5px; height: 5px; border-radius: 50%; background: var(--ok); }
 .radar { position: relative; width: 100%; aspect-ratio: 1; border-radius: 50%; background: var(--radar2); border: 1px solid var(--line); margin-top: 4px; overflow: hidden; transition: background-color .6s ease; }
@@ -174,25 +172,8 @@ section { padding: 88px 0; }
 .harmony svg { flex: none; width: 24px; height: 24px; color: var(--accent); margin-top: 2px; }
 
 /* Two modes */
-.modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.mode { position: relative; border-radius: 28px; padding: 32px 28px; overflow: hidden; border: 1px solid; }
-.mode.dating { background: #26111d; border-color: #4a2338; color: #fdeef4; }
-.mode.vibing { background: #121d38; border-color: #26365f; color: #eef3ff; }
-.mode::after { content: ""; position: absolute; width: 240px; height: 240px; right: -60px; top: -60px; border-radius: 50%; filter: blur(10px); opacity: .45; animation: pulse 3.2s ease-in-out infinite; }
-.mode.dating::after { background: radial-gradient(circle, #ff4f7b, transparent 65%); }
-.mode.vibing::after { background: radial-gradient(circle, #4f8cff, transparent 65%); }
-.mode .tag { display: inline-block; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px; margin-bottom: 18px; }
-.mode.dating .tag { background: #ff4f7b; color: #2b0412; }
-.mode.vibing .tag { background: #ffd23f; color: #2e2300; }
-.mode h3 { font-size: 1.7rem; margin-bottom: 10px; position: relative; }
-.mode p { position: relative; opacity: .85; max-width: 30rem; }
-.mode ul { position: relative; margin: 16px 0 22px; padding: 0; list-style: none; display: grid; gap: 8px; }
-.mode li { display: flex; gap: 10px; align-items: flex-start; }
-.mode li svg { flex: none; width: 18px; height: 18px; margin-top: 4px; }
-.mode.dating li svg { color: #ff4f7b; } .mode.vibing li svg { color: #4f8cff; }
-.mode .btn { position: relative; }
-.mode.dating .btn { background: #ff4f7b; color: #2b0412; }
-.mode.vibing .btn { background: #4f8cff; color: #03102b; }
+.chips.upfor { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.chip .emo { flex: none; font-size: 1.5rem; line-height: 1; }
 
 /* Privacy */
 .privacy { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 48px; align-items: start; }
@@ -328,8 +309,9 @@ footer { padding-bottom: calc(44px + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 720px) {
   section { padding: 64px 0; }
-  .steps, .grid, .modes { grid-template-columns: minmax(0, 1fr); }
+  .steps, .grid { grid-template-columns: minmax(0, 1fr); }
   .chips { grid-template-columns: minmax(0, 1fr); }
+  .chips.upfor { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bar-in { gap: 8px; }
   .bar .cta-top { display: none; }
   .seg button { padding: 8px 10px; }
