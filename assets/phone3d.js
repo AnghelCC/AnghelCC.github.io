@@ -27,18 +27,24 @@ function start() {
   };
   const T = {
     ro: { up: '☕ O cafea', sub: 'Atinge pe cineva ca să-i vezi piesa', here: '5 persoane în cameră', live: 'Bluetooth · activ',
-      playing: (n) => `${n.toUpperCase()} ASCULTĂ`, wave: 'Salută', waved: 'Ai salutat', chat: 'Scrie-i',
+      playing: (n) => `${n.toUpperCase()} ASCULTĂ`, wave: 'Salută', imIn: 'Vin și eu', waved: 'Ai salutat', chat: 'Scrie-i',
       back: (n) => `${n} ți-a răspuns la salut!`, tabs: ['Radar', 'Mesaje', 'Profil'], you: 'Tu' },
     en: { up: '☕ Coffee', sub: 'Tap someone to see their song', here: '5 people in the room', live: 'Bluetooth · live',
-      playing: (n) => `${n.toUpperCase()} IS PLAYING`, wave: 'Wave', waved: 'Waved', chat: 'Chat',
+      playing: (n) => `${n.toUpperCase()} IS PLAYING`, wave: 'Wave', imIn: "I'm in", waved: 'Waved', chat: 'Chat',
       back: (n) => `${n} waved back!`, tabs: ['Radar', 'Chats', 'Profile'], you: 'You' },
+  };
+  // What people are up for, as in the app ("Up for…").
+  const ACT = {
+    concert: { e: '🎤', ro: 'Un concert', en: 'A concert' },
+    movie: { e: '🎬', ro: 'Un film', en: 'A movie' },
+    sport: { e: '🏃', ro: 'Alergat, sport', en: 'A run, sport' },
   };
   const people = [
     { n: 'Ioana', age: 24, g: 'indie', a: -0.9, r: 0.42, song: 'Motion Sickness', artist: 'Phoebe Bridgers', d: '2–5 m' },
-    { n: 'Vlad', age: 27, g: 'electronic', a: 0.5, r: 0.78, song: 'Delilah', artist: 'Fred again..', d: '5–10 m' },
-    { n: 'Maria', age: 23, g: 'pop', a: 2.2, r: 0.55, song: 'Houdini', artist: 'Dua Lipa', d: '1–2 m' },
+    { n: 'Vlad', age: 27, g: 'electronic', a: 0.5, r: 0.78, song: 'Delilah', artist: 'Fred again..', d: '5–10 m', act: 'concert' },
+    { n: 'Maria', age: 23, g: 'pop', a: 2.2, r: 0.55, song: 'Houdini', artist: 'Dua Lipa', d: '1–2 m', act: 'movie' },
     { n: 'Andrei', age: 26, g: 'rock', a: 3.4, r: 0.82, song: 'Do I Wanna Know?', artist: 'Arctic Monkeys', d: '5–10 m' },
-    { n: 'Sara', age: 25, g: 'jazz', a: 4.6, r: 0.66, song: 'Feeling Good', artist: 'Nina Simone', d: '2–5 m' },
+    { n: 'Sara', age: 25, g: 'jazz', a: 4.6, r: 0.66, song: 'Feeling Good', artist: 'Nina Simone', d: '2–5 m', act: 'sport' },
   ];
   const DISPLAY = '"Bricolage Grotesque", system-ui, sans-serif';
   const BODY = '"Atkinson Hyperlegible", system-ui, sans-serif';
@@ -125,6 +131,12 @@ function start() {
       ctx.fillStyle = C('surface2'); ctx.beginPath(); ctx.arc(x, y, 31, 0, Math.PI * 2); ctx.fill();
       ctx.strokeStyle = col; ctx.lineWidth = 4; ctx.stroke();
       ctx.fillStyle = C('fg'); ctx.font = `800 27px ${DISPLAY}`; ctx.fillText(p.n[0], x, y + 1);
+      // their activity, top right of the bubble
+      if (p.act) {
+        ctx.fillStyle = C('blush'); ctx.beginPath(); ctx.arc(x + 25, y - 25, 17, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = C('bg'); ctx.lineWidth = 4; ctx.stroke();
+        ctx.font = `18px ${BODY}`; ctx.fillText(ACT[p.act].e, x + 25, y - 24);
+      }
       ctx.fillStyle = i === sel ? C('fg') : C('muted'); ctx.font = `700 21px ${BODY}`; ctx.fillText(p.n, x, y + 54);
     });
     ctx.textAlign = 'left';
@@ -161,11 +173,18 @@ function start() {
     ctx.strokeStyle = GEN[p.g]; ctx.lineWidth = 4; ctx.stroke();
     ctx.fillStyle = C('fg'); ctx.font = `800 28px ${DISPLAY}`; ctx.textAlign = 'center'; ctx.fillText(p.n[0], 110, 1231);
     ctx.textAlign = 'left'; ctx.font = `800 28px ${DISPLAY}`; ctx.fillText(`${p.n}, ${p.age}`, 166, 1215);
-    ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(`${GENRE[lang()][p.g]} · ${p.d}`, 166, 1251);
+    if (p.act) {
+      ctx.fillStyle = C('blush'); ctx.font = `700 23px ${BODY}`;
+      ctx.fillText(`${ACT[p.act].e} ${ACT[p.act][lang()]}`, 166, 1251);
+      const w = ctx.measureText(`${ACT[p.act].e} ${ACT[p.act][lang()]}`).width;
+      ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(` · ${p.d}`, 166 + w, 1251);
+    } else {
+      ctx.fillStyle = C('muted'); ctx.font = `400 23px ${BODY}`; ctx.fillText(`${GENRE[lang()][p.g]} · ${p.d}`, 166, 1251);
+    }
     const done = waved.has(sel);
     ctx.fillStyle = done ? C('surface2') : C('accent'); rr(waveBtn.x, waveBtn.y, waveBtn.w, waveBtn.h, 28); ctx.fill();
     ctx.fillStyle = done ? C('muted') : C('accentInk'); ctx.font = `800 24px ${BODY}`; ctx.textAlign = 'center';
-    ctx.fillText(done ? L.chat : L.wave, waveBtn.x + waveBtn.w / 2, waveBtn.y + 29);
+    ctx.fillText(done ? L.chat : p.act ? L.imIn : L.wave, waveBtn.x + waveBtn.w / 2, waveBtn.y + 29);
     ctx.textAlign = 'left';
 
     // tab bar
